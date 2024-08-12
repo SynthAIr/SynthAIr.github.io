@@ -1,0 +1,18 @@
+title: SynthAIr Project
+description: >- # this means to ignore newlines until "baseurl:"
+  SynthAIr is a project that aims to create synthetic aircraft data for training machine learning models.
+baseurl: "/docs" # the subpath of your site, e.g. /blog
+url: "https://synthair.github.io/" # the base hostname & protocol for your site
+
+# Build settings
+markdown: kramdown
+
+# Use Minimal theme
+includes_dir: themes/minimal/_includes
+layouts_dir: themes/minimal/_layouts
+sass:
+  load_paths:
+    - themes/minimal/_sass
+assets:
+  css:
+    - themes/minimal/assets/css/style.scss
