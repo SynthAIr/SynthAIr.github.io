@@ -12,3 +12,6 @@ layouts_dir: themes/minimal/_layouts
 sass:
   load_paths:
     - themes/minimal/_sass
+assets:
+  css:
+    - themes/minimal/assets/css/style.scss
