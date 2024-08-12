@@ -2,122 +2,24 @@
 layout: default
 ---
 
-Text can be **bold**, _italic_, or ~~strikethrough~~.
+SynthAIr is two-year project supported by SESAR 3 Joint Undertaking. The project explore and define novel AI-based methods for synthetic data generation in the domain of air traffic management (ATM) system. SynthAIr’s mission is to increase the level of automation, leveraging the potential of synthetic data for tackling structural obstacles such as data access and scarcity, privacy issues and bias in the data.
 
-[Link to another page](./another-page.html).
+Officially launched on 1 September 2023, SynthAIr's consortium is led by [SINTEF](https://www.sintef.no/en/) and includes [Deep Blue](https://dblue.it/en/), [Eurocontrol](https://www.eurocontrol.int/) and [Delft University of Technology](https://www.tudelft.nl/en/).
 
-There should be whitespace between paragraphs.
-
-There should be whitespace between paragraphs. We recommend including a README, or a file with information about your project.
-
-# Header 1
-
-This is a normal paragraph following a header. GitHub is a code hosting platform for version control and collaboration. It lets you and others work together on projects from anywhere.
-
-## Header 2
-
-> This is a blockquote following a header.
->
-> When something is important enough, you do it even if the odds are not in your favor.
-
-### Header 3
-
-```js
-// Javascript code with syntax highlighting.
-var fun = function lang(l) {
-  dateformat.i18n = require('./lang/' + l)
-  return true;
-}
-```
-
-```ruby
-# Ruby code with syntax highlighting
-GitHubPages::Dependencies.gems.each do |gem, version|
-  s.add_dependency(gem, "= #{version}")
-end
-```
-
-#### Header 4
-
-*   This is an unordered list following a header.
-*   This is an unordered list following a header.
-*   This is an unordered list following a header.
-
-##### Header 5
-
-1.  This is an ordered list following a header.
-2.  This is an ordered list following a header.
-3.  This is an ordered list following a header.
-
-###### Header 6
-
-| head1        | head two          | three |
-|:-------------|:------------------|:------|
-| ok           | good swedish fish | nice  |
-| out of stock | good and plenty   | nice  |
-| ok           | good `oreos`      | hmm   |
-| ok           | good `zoute` drop | yumm  |
-
-### There's a horizontal rule below this.
-
-* * *
-
-### Here is an unordered list:
-
-*   Item foo
-*   Item bar
-*   Item baz
-*   Item zip
-
-### And an ordered list:
-
-1.  Item one
-1.  Item two
-1.  Item three
-1.  Item four
-
-### And a nested list:
-
-- level 1 item
-  - level 2 item
-  - level 2 item
-    - level 3 item
-    - level 3 item
-- level 1 item
-  - level 2 item
-  - level 2 item
-  - level 2 item
-- level 1 item
-  - level 2 item
-  - level 2 item
-- level 1 item
-
-### Small image
-
-![Octocat](https://github.githubassets.com/images/icons/emoji/octocat.png)
-
-### Large image
-
-![Branching](https://guides.github.com/activities/hello-world/branching.png)
+![Concept Outline](docs/concept_outline.png)
 
 
-### Definition lists can be used with HTML syntax.
+## Use Case 1: Synthetic Trajectory Generation
 
-<dl>
-<dt>Name</dt>
-<dd>Godzilla</dd>
-<dt>Born</dt>
-<dd>1952</dd>
-<dt>Birthplace</dt>
-<dd>Japan</dd>
-<dt>Color</dt>
-<dd>Green</dd>
-</dl>
+In this use case, we aims to generate synthetic aircraft trajectories, using various generative models. We focuses on generating realistic aircraft trajectories that can be used for various downstream applications, such as air traffic simulation, capacity planning, and data augmentation.
 
-```
-Long, single-line code blocks should not wrap. They should horizontally scroll if they are too long. This line should be long enough to demonstrate this.
-```
+![Trajectories](docs/trajectories.png)
 
-```
-The final element.
-```
+
+## Use Case 2: Flight schedule
+
+## Use Case 3: Flight Delay
+
+
+## Use Case 4: Flight Diversion
+

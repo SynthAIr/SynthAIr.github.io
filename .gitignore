@@ -1,0 +1,45 @@
+# Jekyll metadata and build files
+_site/
+.jekyll-metadata
+
+# Jekyll temp files
+.sass-cache/
+.jekyll-cache/
+.jekyll-cache/*
+.cache/
+cache/
+
+# Dependency directories
+.bundle/
+vendor/
+
+# Log and DB files
+*.log
+*.sqlite3
+*.db
+
+# Byebug history
+.byebug_history
+
+# System specific
+.DS_Store
+Thumbs.db
+
+# Node modules (if using npm)
+node_modules/
+
+# Environment variables file
+.env
+
+# Gemfile.lock, if using versioned gems and sharing with others
+# Uncomment the following line if your project includes this file:
+# Gemfile.lock
+
+# VS Code specific files
+.vscode/
+
+# JetBrains IDEs specific files
+.idea/
+
+# Linux swap file
+*.swp
