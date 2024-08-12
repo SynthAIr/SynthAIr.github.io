@@ -1,10 +1,15 @@
 title: SynthAIr Project
+logo: /docs/logo.png
 description: >- 
   SynthAIr is a project that aims to create synthetic aircraft data for training machine learning models.
 baseurl: "" # Empty because root is the publishing source
 url: "https://synthair.github.io" # Your site's URL
 
 markdown: kramdown
+
+show_downloads: true
+google_analytics:
+
 
 # Paths to theme files
 includes_dir: themes/minimal/_includes
