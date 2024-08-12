@@ -1,10 +1,9 @@
 title: SynthAIr Project
-description: >
+description: >- 
   SynthAIr is a project that aims to create synthetic aircraft data for training machine learning models.
-baseurl: "/docs" # the subpath of your site, e.g. /blog
-url: "https://synthair.github.io" # the base hostname & protocol for your site
+baseurl: "" # Empty because root is the publishing source
+url: "https://synthair.github.io" # Your site's URL
 
-# Build settings
 markdown: kramdown
 
 # Paths to theme files

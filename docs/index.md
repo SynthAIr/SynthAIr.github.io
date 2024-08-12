@@ -1,8 +1,8 @@
 ---
-title: SynthAIr Project
+title: Welcome to SynthAIr
 layout: default
 ---
 
-# Welcome to the SynthAIr Project
+# Welcome to SynthAIr Project
 
-This is a draft of the SynthAIr project website.
+SynthAIr is a project that aims to create synthetic aircraft data for training machine learning models.
