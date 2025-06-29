@@ -1,0 +1,140 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="40 -30 1120 370">
+  <!-- Definitions for gradients and effects -->
+  <defs>
+    <!-- Gradient definitions -->
+    <linearGradient id="blueGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" style="stop-color:#3B82F6;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#6366F1;stop-opacity:1" />
+    </linearGradient>
+    <linearGradient id="greenGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" style="stop-color:#10B981;stop-opacity:0.5" />
+      <stop offset="100%" style="stop-color:#6EE7B7;stop-opacity:0.5" />
+    </linearGradient>
+    <linearGradient id="goldGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" style="stop-color:#F59E0B;stop-opacity:0.5" />
+      <stop offset="100%" style="stop-color:#FBBF24;stop-opacity:0.5" />
+    </linearGradient>
+    <linearGradient id="purpleGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" style="stop-color:#8B5CF6;stop-opacity:0.5" />
+      <stop offset="100%" style="stop-color:#C4B5FD;stop-opacity:0.5" />
+    </linearGradient>
+    <!-- Drop shadow -->
+<filter id="shadow" x="-20%" y="-20%" width="140%" height="140%">
+  <feGaussianBlur in="SourceAlpha" stdDeviation="4"/>
+  <feOffset dx="3" dy="3"/>
+  <feComponentTransfer>
+    <feFuncA type="linear" slope="0.4"/>
+  </feComponentTransfer>
+  <feMerge>
+    <feMergeNode/>
+    <feMergeNode in="SourceGraphic"/>
+  </feMerge>
+</filter>
+<!-- Arrowhead marker -->
+<marker id="arrowhead" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto">
+  <path d="M1,1 L10,3.5 L1,6 L2,3.5 Z" fill="#374151"/>
+</marker>
+<!-- Arrowhead2 marker -->
+<marker id="arrowhead2" markerWidth="10" markerHeight="7" refX="5" refY="3.5" orient="auto">
+    <path d="M0,0 L10,3.5 L0,7 L3,3.5 Z" fill="#374151" />
+</marker>
+</defs>
+  <!-- Main flow containers -->
+  <!-- Data Sources (highlighted) -->
+<rect x="50" y="80" width="150" height="60" rx="10" fill="url(#blueGrad)" filter="url(#shadow)" />
+<text x="125" y="115" text-anchor="middle" font-size="14" font-weight="bold" fill="black" font-family="Arial" style="text-shadow: 1px 1px 2px rgba(0,0,0,0.3);">Data Sources ✅</text>
+<!-- Sub-items for Data Sources -->
+<!-- Trajectory Data -->
+<rect x="60" y="160" width="130" height="30" rx="5" fill="#E5E7EB" />
+<text x="125" y="180" text-anchor="middle" font-size="10" fill="#374151">Trajectory Data</text>
+<!-- Subsections for Trajectory Data -->
+<rect x="70" y="195" width="110" height="18" rx="3" fill="#F3F4F6" />
+<rect x="70" y="218" width="110" height="18" rx="3" fill="#F3F4F6" />
+<text x="125" y="208" text-anchor="middle" font-size="8" fill="#4B5563">OpenSky Network</text>
+<text x="125" y="231" text-anchor="middle" font-size="8" fill="#4B5563">EUROCONTROL RD</text>
+<!-- Contextual Data -->
+<rect x="60" y="245" width="130" height="30" rx="5" fill="#E5E7EB" />
+<text x="125" y="265" text-anchor="middle" font-size="10" fill="#374151">Contextual Data</text>
+<!-- Subsections for Contextual Data -->
+<rect x="70" y="280" width="110" height="18" rx="3" fill="#F3F4F6" />
+<rect x="70" y="303" width="110" height="18" rx="3" fill="#F3F4F6" />
+<text x="125" y="293" text-anchor="middle" font-size="8" fill="#4B5563">ERA5 Weather</text>
+<text x="125" y="316" text-anchor="middle" font-size="8" fill="#4B5563">METAR</text>
+<!-- AI Models -->
+<rect x="250" y="80" width="200" height="60" rx="10" fill="url(#greenGrad)" filter="url(#shadow)" />
+<text x="350" y="115" text-anchor="middle" font-size="14" font-weight="bold" fill="black" font-family="Arial" style="text-shadow: 1px 1px 2px rgba(0,0,0,0.3);">AI Models ✅</text>
+<!-- Time Series Models Header -->
+<text x="350" y="160" text-anchor="middle" font-size="10" font-weight="bold" fill="#374151">Time Series</text>
+<rect x="285" y="170" width="130" height="22" rx="5" fill="#E5E7EB" />
+<rect x="285" y="196" width="130" height="22" rx="5" fill="#E5E7EB" />
+<rect x="285" y="222" width="130" height="22" rx="5" fill="#E5E7EB" />
+<rect x="285" y="248" width="130" height="22" rx="5" fill="#E5E7EB" />
+<rect x="285" y="274" width="130" height="22" rx="5" fill="#E5E7EB" />
+<text x="350" y="184" text-anchor="middle" font-size="9" fill="#374151">TCVAE</text>
+<text x="350" y="210" text-anchor="middle" font-size="9" fill="#374151">TimeVQVAE</text>
+<text x="350" y="236" text-anchor="middle" font-size="9" fill="#374151">TimeGAN</text>
+<text x="350" y="262" text-anchor="middle" font-size="9" fill="#374151"> (Latent) Flow Matching</text>
+<text x="350" y="288" text-anchor="middle" font-size="9" fill="#374151">(Latent) Diffusion Models</text>
+<!-- Synthetic Data -->
+<rect x="500" y="80" width="200" height="60" rx="10" fill="url(#goldGrad)" filter="url(#shadow)" />
+<text x="600" y="115" text-anchor="middle" font-size="14" font-weight="bold" fill="black" font-family="Arial" style="text-shadow: 1px 1px 2px rgba(0,0,0,0.3);">Synthetic Data ✅</text>
+<!-- Flight Trajectories with subsections -->
+<rect x="535" y="160" width="130" height="30" rx="5" fill="#E5E7EB" />
+<text x="600" y="180" text-anchor="middle" font-size="10" fill="#374151">Aircraft Trajectories</text>
+<!-- Subsections for Aircraft Trajectories -->
+<rect x="545" y="195" width="110" height="18" rx="3" fill="#F3F4F6" />
+<rect x="545" y="218" width="110" height="18" rx="3" fill="#F3F4F6" />
+<text x="600" y="208" text-anchor="middle" font-size="8" fill="#4B5563">Landing Approaches</text>
+<text x="600" y="231" text-anchor="middle" font-size="8" fill="#4B5563">End-to-End Flights</text>
+<!-- Extended Validation Section -->
+<rect x="750" y="80" width="400" height="60" rx="10" fill="url(#purpleGrad)" filter="url(#shadow)" />
+<text x="950" y="115" text-anchor="middle" font-size="14" font-weight="bold" fill="black" font-family="Arial" style="text-shadow: 1px 1px 2px rgba(0,0,0,0.3);">Validation ✅</text>
+<!-- Fidelity Section -->
+<rect x="760" y="160" width="120" height="25" rx="5" fill="#E1E7F5" />
+<text x="820" y="177" text-anchor="middle" font-size="10" font-weight="bold" fill="#374151">Fidelity</text>
+<!-- Fidelity subsections -->
+<rect x="765" y="190" width="110" height="15" rx="3" fill="#F3F4F6" />
+<text x="820" y="201" text-anchor="middle" font-size="7" fill="#4B5563">FID and IS Scores</text>
+<rect x="765" y="208" width="110" height="15" rx="3" fill="#F3F4F6" />
+<text x="820" y="219" text-anchor="middle" font-size="7" fill="#4B5563">MMD and Energy Distance</text>
+<rect x="765" y="226" width="110" height="15" rx="3" fill="#F3F4F6" />
+<text x="820" y="237" text-anchor="middle" font-size="7" fill="#4B5563">Distribution Similarity</text>
+<rect x="765" y="244" width="110" height="15" rx="3" fill="#F3F4F6" />
+<text x="820" y="255" text-anchor="middle" font-size="7" fill="#4B5563">Reconstruction Quality</text>
+<!-- Diversity Section -->
+<rect x="890" y="160" width="120" height="25" rx="5" fill="#E8F4FD" />
+<text x="950" y="177" text-anchor="middle" font-size="10" font-weight="bold" fill="#374151">Diversity</text>
+<!-- Diversity subsections -->
+<rect x="895" y="190" width="110" height="15" rx="3" fill="#F3F4F6" />
+<text x="950" y="201" text-anchor="middle" font-size="7" fill="#4B5563">PCA Analysis</text>
+<rect x="895" y="208" width="110" height="15" rx="3" fill="#F3F4F6" />
+<text x="950" y="219" text-anchor="middle" font-size="7" fill="#4B5563">t-SNE Clustering</text>
+<rect x="895" y="226" width="110" height="15" rx="3" fill="#F3F4F6" />
+<text x="950" y="237" text-anchor="middle" font-size="7" fill="#4B5563">Trajectory Variation</text>
+<!-- Domain-Specific Section -->
+<rect x="1020" y="160" width="120" height="25" rx="5" fill="#F0F9F0" />
+<text x="1080" y="177" text-anchor="middle" font-size="10" font-weight="bold" fill="#374151">Domain-Specific</text>
+<!-- Domain-Specific subsections -->
+<rect x="1025" y="190" width="110" height="15" rx="3" fill="#F3F4F6" />
+<text x="1080" y="201" text-anchor="middle" font-size="7" fill="#4B5563">Flyability Assessment</text>
+<rect x="1025" y="208" width="110" height="15" rx="3" fill="#F3F4F6" />
+<text x="1080" y="219" text-anchor="middle" font-size="7" fill="#4B5563">Temporal Consistency</text>
+<rect x="1025" y="226" width="110" height="15" rx="3" fill="#F3F4F6" />
+<text x="1080" y="237" text-anchor="middle" font-size="7" fill="#4B5563">Speed Profiles</text>
+
+<!-- Forward flow arrows -->
+  <path d="M200,110 C230,110 230,110 250,110" stroke="#374151" stroke-width="2.5" marker-end="url(#arrowhead)" fill="none"/>
+  <path d="M450,110 C480,110 480,110 500,110" stroke="#374151" stroke-width="2.5" marker-end="url(#arrowhead)"  fill="none"/>
+  <path d="M700,110 C730,110 730,110 750,110" stroke="#374151" stroke-width="2.5" marker-end="url(#arrowhead)"  fill="none"/>
+  <!-- Feedback loops -->
+  <!-- Validation to AI Models feedback (over the top) -->
+<path d="M950,80 C950,0 350,0 350,80" 
+     stroke="#374151" stroke-width="1.5" stroke-dasharray="5,5"
+     marker-end="url(#arrowhead2)" fill="none"/>
+<text x="550" y="40" text-anchor="middle" font-size="10" fill="#374151" font-family="Arial" >Model Refinement</text>
+  <!-- Validation to Data Sources feedback -->
+<path d="M950,80 C950,-50 125,-50 125,80" 
+     stroke="#374151" stroke-width="1.5" stroke-dasharray="5,5"
+     marker-end="url(#arrowhead2)" fill="none"/>
+<text x="230" y="40" text-anchor="middle" font-size="10" fill="#374151" font-family="Arial" >Quality Feedback</text>
+</svg>

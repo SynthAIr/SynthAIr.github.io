@@ -1,0 +1,187 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="-30 130 1110 430">
+  <defs>
+    <!-- Timeline Gradient from second diagram -->
+    <linearGradient id="timelineGradient" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" style="stop-color:#667eea;stop-opacity:1" />
+      <stop offset="50%" style="stop-color:#764ba2;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#f093fb;stop-opacity:1" />
+    </linearGradient>
+    
+    <filter id="shadow" x="-20%" y="-20%" width="140%" height="140%">
+      <feGaussianBlur in="SourceAlpha" stdDeviation="3" />
+      <feOffset dx="2" dy="2" result="offsetblur" />
+      <feFlood flood-color="rgba(0,0,0,0.3)" />
+      <feComposite in2="offsetblur" operator="in" />
+      <feMerge>
+        <feMergeNode />
+        <feMergeNode in="SourceGraphic" />
+      </feMerge>
+    </filter>
+    
+    <!-- Enhanced Shadow Filter -->
+    <filter id="dropShadow" x="-50%" y="-50%" width="200%" height="200%">
+      <feGaussianBlur in="SourceAlpha" stdDeviation="4"/>
+      <feOffset dx="0" dy="4" result="offsetblur"/>
+      <feFlood flood-color="#000000" flood-opacity="0.15"/>
+      <feComposite in2="offsetblur" operator="in"/>
+      <feMerge>
+        <feMergeNode/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+    
+    <marker id="arrowhead" markerWidth="10" markerHeight="7" refX="0" refY="3.5" orient="auto">
+      <polygon points="0 0, 10 3.5, 0 7" fill="#424242" />
+    </marker>
+  </defs>
+  <style>
+    text { font-family: 'Arial', sans-serif; fill: #212121; }
+    .small { font-size: 12px; }
+    .medium { font-size: 14px; }
+    .large { font-size: 18px; font-weight: bold; }
+    .timeline { stroke: url(#timelineGradient); stroke-width: 8; }
+    .point { fill: #2196F3; }
+    .interval { stroke-width: 8; }
+    .usecase { fill-opacity: 0.8; stroke-width: 2; }
+    .label { fill: #FFFFFF; }
+    .cutoff { stroke: #BDBDBD; stroke-width: 0.8; stroke-dasharray: 5,5; }
+    .connection { stroke: #424242; stroke-width: 1; fill: none; marker-end: url(#arrowhead); }
+    .connection2 { stroke: #424242; stroke-width: 1; fill: none; marker-end: none; }
+    .equation { font-size: 12px; fill: #424242; }
+    .phase-circle {
+      filter: url(#dropShadow);
+      cursor: pointer;
+      transition: all 0.3s ease;
+    }
+  </style>
+
+  <!-- white background -->
+  <rect x="-30" y="100" width="1200" height="620" fill="#FFFFFF" />
+
+  <!-- Cutoff Lines -->
+  <line x1="150" y1="175" x2="150" y2="420" class="cutoff" />
+  <line x1="300" y1="175" x2="300" y2="420" class="cutoff" />
+  <line x1="700" y1="175" x2="700" y2="420" class="cutoff" />
+  <line x1="850" y1="175" x2="850" y2="420" class="cutoff" />
+  <line x1="1030" y1="175" x2="1030" y2="530" class="cutoff" />
+
+  <!-- Timeline with Gradient -->
+  <path d="M150 240 L300 240 Q320 180 350 180 L650 180 Q675 180 700 240 L850 240" class="timeline" fill="none" />
+  
+  <!-- Enhanced Phase Circles with Icons -->
+  <g class="phase-circle">
+    <circle cx="150" cy="240" r="20" fill="#667eea"/>
+    <circle cx="150" cy="240" r="16" fill="#ffffff"/>
+    <text x="150" y="246" text-anchor="middle" font-size="20">✈️</text>
+  </g>
+  
+  <g class="phase-circle">
+    <circle cx="300" cy="240" r="20" fill="#764ba2"/>
+    <circle cx="300" cy="240" r="16" fill="#ffffff"/>
+    <text x="300" y="246" text-anchor="middle" font-size="20">🛫</text>
+  </g>
+  
+  <g class="phase-circle">
+    <circle cx="700" cy="240" r="20" fill="#f093fb"/>
+    <circle cx="700" cy="240" r="16" fill="#ffffff"/>
+    <text x="700" y="246" text-anchor="middle" font-size="20">🛬</text>
+  </g>
+  
+  <g class="phase-circle">
+    <circle cx="850" cy="240" r="20" fill="#fa709a"/>
+    <circle cx="850" cy="240" r="16" fill="#ffffff"/>
+    <text x="850" y="246" text-anchor="middle" font-size="20">🏁</text>
+  </g>
+
+  <!-- Time Labels -->
+  <text x="150" y="155" class="medium" text-anchor="middle">Off-Block</text>
+  <text x="150" y="170" class="medium" text-anchor="middle">Time</text>
+  <text x="300" y="155" class="medium" text-anchor="middle">Take-off</text>
+  <text x="300" y="170" class="medium" text-anchor="middle">Time</text>
+  <text x="700" y="155" class="medium" text-anchor="middle">Landing</text>
+  <text x="700" y="170" class="medium" text-anchor="middle">Time</text>
+  <text x="850" y="155" class="medium" text-anchor="middle">In-Block</text>
+  <text x="850" y="170" class="medium" text-anchor="middle">Time</text>
+
+  <!-- UC3: Passenger Flow -->
+  <rect x="-25" y="225" width="160" height="30" fill="#64B5F6" class="usecase" stroke="#1976D2" rx="10" ry="10" />
+  <text x="55" y="245" class="medium" text-anchor="middle" fill="#FFFFFF">👥 Passenger Flow (UC3)</text>
+  
+  <!-- Initial phase for next flight -->
+  <g class="phase-circle" opacity="0.6">
+    <circle cx="1030" cy="240" r="20" fill="#fee140"/>
+    <circle cx="1030" cy="240" r="16" fill="#ffffff"/>
+    <text x="1030" y="246" text-anchor="middle" font-size="20">🔄</text>
+  </g>
+  <line x1="850" y1="240" x2="1030" y2="240" stroke="url(#timelineGradient)" stroke-width="4" stroke-dasharray="5,5" />
+  <text x="1030" y="155" class="medium" text-anchor="middle">Next Off-Block</text>
+  <text x="1030" y="170" class="medium" text-anchor="middle">Time</text>
+
+  <!-- Time Intervals -->
+  <text x="225" y="220" class="small" text-anchor="middle" fill="#27ae60">Taxi Out Time</text>
+  <text x="500" y="170" class="small" text-anchor="middle" fill="#d35400">Flight Time</text>
+  <text x="775" y="220" class="small" text-anchor="middle" fill="#8e44ad">Taxi In Time</text>
+  <!-- Dotted Turnaround Segment on Timeline -->
+  <path d="M870 240 L1020 240" stroke="#FF8A65" stroke-width="4" stroke-dasharray="6,4" fill="none" />
+  <text x="940" y="220" class="small" text-anchor="middle" fill="#c0392b">Turnaround Time</text>
+
+  <!-- Use Cases -->
+  <!-- UC6: Scheduling -->
+  <rect x="100" y="520" width="930" height="30" fill="#FFD54F" class="usecase" stroke="#FFA000" rx="10" ry="10" />
+  <text x="550" y="540" class="medium" text-anchor="middle" fill="#212121">📅  Scheduling (UC6)</text>
+  
+  <!-- UC1: Turnaround Time -->
+  <rect x="850" y="340" width="180" height="30" fill="#FF8A65" class="usecase" stroke="#D84315" rx="10" ry="10" />
+  <text x="940" y="360" class="medium" text-anchor="middle" fill="#FFFFFF">🔄  Turnaround Time (UC1)</text>
+  
+  <!-- UC2: Departure Delay -->
+  <rect x="100" y="420" width="300" height="30" fill="#4DB6AC" class="usecase" stroke="#00897B" rx="10" ry="10" />
+  <text x="250" y="440" class="medium" text-anchor="middle" fill="#FFFFFF">⏰ Departure Delay (UC2)</text>
+  
+  <!-- UC2: Arrival Delay -->
+  <rect x="600" y="420" width="300" height="30" fill="#4DB6AC" class="usecase" stroke="#00897B" rx="10" ry="10" />
+  <text x="750" y="440" class="medium" text-anchor="middle" fill="#FFFFFF">⏰ Arrival Delay (UC2)</text>
+  
+  <!-- UC4: Aircraft Trajectory -->
+  <rect x="300" y="340" width="400" height="30" fill="#BA68C8" class="usecase" stroke="#8E24AA" rx="10" ry="10" />
+  <text x="500" y="360" class="medium" text-anchor="middle" fill="#FFFFFF">🛩️ Aircraft Trajectory (UC4)</text>
+  
+  <!-- UC5: Flight Diversion Prediction -->
+  <rect x="600" y="280" width="200" height="30" fill="#AED581" class="usecase" stroke="#689F38" rx="10" ry="10" />
+  <text x="700" y="300" class="medium" text-anchor="middle" fill="#FFFFFF">🔀 Flight Diversion (UC5)</text>
+
+  <!-- Connections -->
+  <!-- SOBT -->
+  <path d="M125 520 L125 460" class="connection" />
+  <text x="130" y="495" class="equation">Scheduled</text>
+  <text x="130" y="510" class="equation">Off-Block Time</text>
+  
+  <!-- SIBT -->
+  <path d="M825 520 L825 460" class="connection" />
+  <text x="750" y="495" class="equation">Scheduled</text>
+  <text x="730" y="510" class="equation">In-Block Time</text>
+  
+  <!-- STTT -->
+  <path d="M925 520 L925 380" class="connection" />
+  <text x="930" y="495" class="equation">Scheduled</text>
+  <text x="930" y="510" class="equation">Turnaround Time</text>
+  
+  <!-- Initial Conditions -->
+  <path d="M250 420 L250 355 L290 355" class="connection" />
+  <text x="210" y="350" class="equation">Initial Conditions</text>
+  
+  <!-- Flight Duration -->
+  <path d="M700 355 L750 355 L750 410" class="connection" />
+  <text x="703" y="350" class="equation">Flight Duration</text>
+  
+  <!-- MTTT -->
+  <path d="M810 420 L810 355 L840 355" class="connection" />
+  <text x="795" y="350" class="equation">Impact TT</text>
+  
+  <!-- Diversion -->
+  <path d="M550 340 L550 295 L590 295" class="connection" />
+  <text x="545" y="290" class="equation">Diversion</text>
+  
+  <path d="M950 340 L950 295 L1020 295" class="connection" />
+  <text x="950" y="290" class="equation">Impact delay</text>
+</svg>
