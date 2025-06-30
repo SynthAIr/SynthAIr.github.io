@@ -8,13 +8,17 @@ nav_order: 7
 
 The research and development in the SynthAIr project are disseminated through peer-reviewed publications, public deliverables, and open-access datasets. This page provides a comprehensive list of our contributions to the field of AI-driven air traffic management.
 
+
+**Note:** *SynthAIr is an ongoing research project. Several deliverables and scientific publications are currently under internal review, including many under evaluation by the SESAR Joint Undertaking. These materials will be made publicly available upon approval and finalization. Please check back regularly for updates.*
+
+
 ## Conference Papers
 
 
 ### **Synthetic Aircraft Trajectory Generation Using Time-Based VQ-VAE**
 
 - **Authors:** Abdulmajid Murad (SINTEF), Massimiliano Ruocco (SINTEF, NTNU) 
-- **Conference:** Integrated Communications, Navigation and Surveillance Conference (ICNS)
+- **Conference:** [Integrated Communications, Navigation and Surveillance Conference (ICNS)](https://i-cns.org/)
 - **Location:** Brussels, Belgium
 - **Date:** April 8-10, 2025
 - **Publisher:** IEEE
@@ -26,7 +30,7 @@ The research and development in the SynthAIr project are disseminated through pe
 ### **Synthetic Flight Data Generation Using Generative Models**
 
 - **Authors:** Karim Aly (TUD), Alexei Sharpanskykh (TUD)
-- **Conference:** Integrated Communications, Navigation and Surveillance Conference (ICNS)
+- **Conference:** [Integrated Communications, Navigation and Surveillance Conference (ICNS)](https://i-cns.org/)
 - **Location:** Brussels, Belgium
 - **Date:** April 8-10, 2025
 - **Publisher:** IEEE
@@ -35,4 +39,38 @@ The research and development in the SynthAIr project are disseminated through pe
 - **Keywords:** Generative Artificial Intelligence, Variational Autoencoders, Gaussian Copula, Synthetic Flight Information, Synthetic Data Quality Assessment, Flight Delay Prediction, Air Traffic Management, Air Transportation Deep Learning, Statistical Modeling
 
 
+### **Generation of Synthetic Aircraft Landing Trajectories Using Generative Adversarial Networks**
 
+- **Authors:** Sebastiaan Wijnands (TUD), Alexei Sharpanskykh (TUD), Karim Aly (TUD)
+- **Conference:** [SESAR Innovation Days](https://www.sesarju.eu/SIDS2024)
+- **Location:** Rome, Italy
+- **Date:** November 11-15, 2024
+- **URL:** [2024-054](https://www.sesarju.eu/sites/default/files/documents/sid/2024/papers/SIDs_2024_paper_054%20final.pdf)
+- **Abstract:** The increasing demand and complexity of air traffic management (ATM) systems necessitate significant advancements in automation to ensure safety and efficiency. Artificial intelligence (AI) and machine learning (ML) are emerging as promising solutions to manage this growing complexity, offering enhanced decision-making and predictive capabilities. However, the effectiveness of ML models in ATM heavily relies on the availability of extensive, high-quality data. In many cases, such data is scarce or incomplete, which presents a major barrier for training robust models. Synthetic data generation (SDG) is a viable solution to address this, enabling the creation of realistic datasets that unlock the ML value proposition. The Terminal Maneuvering Area (TMA) is a crucial segment of airspace characterized by high traffic density and diverse trajectory types, necessitating granular data to model these scenarios accurately. The main research objective of this work was to investigate the applicability of TimeGAN in generating synthetic 4-dimensional aircraft landing trajectories capable of capturing traffic patterns in this airspace, helping to analyze airspace constraints and delay propagation. The resulting synthetic trajectories were evaluated in terms of data diversity, fidelity and usefulness. The main challenge identified during the research was the imbalance in data classes, which affected the models’ ability to accurately capture data patterns, particularly in less frequent scenarios. Generating synthetic data based on separate groupings showed promise in addressing these imbalances, although this approach was sensitive to the designation of groups. This work proves the capability of TimeGAN in generating diverse, realistic trajectories that are difficult to differentiate from real historical data.
+- **Keywords:** Air traffic management, Deep generative models, Generative Adversarial Networks, Multivariate time series generation, Synthetic data quality evaluation
+
+## Public Deliverables
+
+### **D1.1 - Concept outline**
+
+- **Authors:** SINTEF
+- **Date:** January 23, 2024
+- **DOI:** [10.5281/zenodo.13935203](https://doi.org/10.5281/zenodo.13935203)
+- **License:** [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/)
+- **Abstract:**  This deliverable describes the concept outline of the SynthAIr project. The main objective of SynthAIr is to explore and define AI-based methods for synthetic data generation in the domain of ATM systems due to the limitation of AI-based tools development caused by the lack of sufficient data (e.g., safety-related data) and the challenge of generalizing those AI-based models. The project investigates data-driven methods for synthetic data generation because they require 1) less user knowledge expertise (i.e., no need to derive the explicit model of the distribution) and 2) better generalization capabilities. More specifically, inspired by recent advances in computer vision and language technology, SynthAIr proposes the concept of a Universal Time Series Generator (UTG). A UTG is a model trained on several different time series and capable of generating a synthetic dataset representing a new dataset, simply conditioned by a compressed representation of it. In the aviation domain, this generator can be trained on data related to a few airports and then used to generate synthetic data for a new airport. The same principle can be applied to define a Universal Time Series Forecaster (UTF), which is capable of making predictions in a new environment (i.e., data from a new airport) without any additional training.
+
+### **D2.1 State of the art**
+
+- **Authors:** TUD, SINTEF, DEEPBLUE, EUROCONTROL
+- **Date:** May 14, 2024
+- **DOI:** [10.5281/zenodo.13935162](https://doi.org/10.5281/zenodo.13935162)
+- **License:** [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/)
+- **Abstract:** This deliverable discusses the state-of-the-art related to the use cases considered in the project, as well as relevant synthetic data modelling techniques to be used for elaboration of use cases. Based on multiple data-, modelling-, and stakeholder-related criteria, two promising use cases were selected for further elaboration in the project. The literature review serves as a starting point for the activities in WP3 (Synthetic Data Generation for Multivariate Time Series for ATM-automation) and WP4 (Universal Time Series Model for Prediction and Data Generation for ATM-automation), based on the selected use cases.
+
+### **D6.1 - Communication, Dissemination and Exploitation Plan**
+
+- **Authors:** DEEPBLUE
+- **Date:** July 04, 2024
+- **DOI:** [10.5281/zenodo.13935230](https://doi.org/10.5281/zenodo.13935230)
+- **License:** [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/)
+- **Abstract:** This document is the Communication, Dissemination and Exploitation Initial Plan for SynthAIr. It contains detailed information about the Communication and Dissemination strategy, and the preliminary Exploitation strategy. Targets, key messages, information about branding, channels, social media, publications, events and overall KPIs both for communication and dissemination actions are detailed in this document.
