@@ -12,6 +12,16 @@ The research and development in the SynthAIr project are disseminated through pe
 **Note:** *SynthAIr is an ongoing research project. Several deliverables and scientific publications are currently under internal review, including many under evaluation by the SESAR Joint Undertaking. These materials will be made publicly available upon approval and finalization. Please check back regularly for updates.*
 
 
+## Preprints
+
+### **Pre-Tactical Flight-Delay and Turnaround Forecasting with Synthetic Aviation Data**
+
+- **Authors:** Abdulmajid Murad (SINTEF), Massimiliano Ruocco (SINTEF, NTNU)
+- **Preprint:** [arXiv:2508.02294](https://arxiv.org/abs/2508.02294)
+- **Date:** August 4, 2025
+- **Abstract:** Access to comprehensive flight operations data remains severely restricted in aviation due to commercial sensitivity and competitive considerations, hindering the development of predictive models for operational planning. This paper investigates whether synthetic data can effectively replace real operational data for training machine learning models in pre-tactical aviation scenarios-predictions made hours to days before operations using only scheduled flight information. We evaluate four state-of-the-art synthetic data generators on three prediction tasks: aircraft turnaround time, departure delays, and arrival delays. Using a Train on Synthetic, Test on Real (TSTR) methodology on over 1.7 million European flight records, we first validate synthetic data quality through fidelity assessments, then assess both predictive performance and the preservation of operational relationships. Our results show that advanced neural network architectures, specifically transformer-based generators, can retain 94-97% of real-data predictive performance while maintaining feature importance patterns informative for operational decision-making. Our analysis reveals that even with real data, prediction accuracy is inherently limited when only scheduled information is available-establishing realistic baselines for pre-tactical forecasting. These findings suggest that high-quality synthetic data can enable broader access to aviation analytics capabilities while preserving commercial confidentiality, though stakeholders must maintain realistic expectations about pre-tactical prediction accuracy given the stochastic nature of flight operations. 
+- **Keywords:** Synthetic Data, Air Traffic Management (ATM), Flight Delay Prediction, Turnaround Time, Machine Learning, Data Utility, Generative Models, Aviation Operations
+
 ## Conference Papers
 
 
