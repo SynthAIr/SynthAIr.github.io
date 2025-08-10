@@ -1,0 +1,126 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 630">
+  <style>
+    text { font-family: Arial, sans-serif; font-size: 14px; }
+    .title { font-size: 20px; font-weight: bold; }
+    .subtitle { font-size: 14px; font-weight: bold; }
+    .small { font-size: 12px; }
+    .arrow { stroke: #000; stroke-width: 1; }
+    .faded { opacity: 0.3; }
+    .highlight-box { stroke: #ff6600; stroke-width: 3; stroke-dasharray: none; fill: none; }
+    .highlight-bg { fill: #fff7e6; }
+    .downstream-box { fill: #e6f7ff; stroke: #0099cc; stroke-width: 1; }
+    .highlight-arrow { stroke: #ff6600; stroke-width: 2; }
+    .highlight-text { fill: #ff6600; font-weight: bold; }
+  </style>
+  
+  <!-- Highlighting background for active flow -->
+  <!-- <path d="M230 40 L430 40 L430 380 L230 380 Z" class="highlight-bg" /> -->
+  
+  <!-- Input Trajectory -->
+  <rect x="240" y="50" width="120" height="60" fill="#f0f0f0" stroke="#000" />
+  <text x="300" y="75" text-anchor="middle" class="subtitle">Input</text>
+  <text x="300" y="95" text-anchor="middle">Trajectory</text>
+  
+  <!-- Conditional Input (moved to the left) -->
+  <g class="faded">
+    <rect x="10" y="50" width="120" height="60" fill="#ffd7e8" stroke="#000" />
+    <text x="70" y="75" text-anchor="middle" class="subtitle">Conditional</text>
+    <text x="70" y="95" text-anchor="middle">Input (Optional)</text>
+  </g>
+  
+  <!-- Encoder -->
+  <path d="M180 140 L420 140 L360 270 L240 270 Z" fill="#d1e7dd" stroke="#000" />
+  <text x="300" y="180" text-anchor="middle" class="subtitle">Temporal Conv Encoder</text>
+  <text x="300" y="200" text-anchor="middle" class="small">Dilated Causal Convolutions</text>
+  <text x="300" y="220" text-anchor="middle" class="small">Weight Norm, ReLU, Dropout</text>
+  
+  <!-- Embedding Extraction (Highlighted) -->
+  <!-- <rect x="220" y="285" width="160" height="110" rx="20" ry="20" class="highlight-box" /> -->
+  
+  <!-- Latent Space -->
+  <rect x="240" y="310" width="120" height="60" fill="#cfe2ff" stroke="#000" />
+  <text x="300" y="345" text-anchor="middle" class="subtitle">Latent Space</text>
+  
+  <!-- VampPrior -->
+  <g class="faded">
+    <rect x="90" y="300" width="120" height="80" fill="#fff3cd" stroke="#000" />
+    <text x="150" y="325" text-anchor="middle" class="subtitle">VampPrior</text>
+    <text x="150" y="345" text-anchor="middle" class="small">Mixture of</text>
+    <text x="150" y="365" text-anchor="middle" class="small">Variational Posteriors</text>
+  </g>
+  
+  <!-- Decoder (Faded) -->
+  <g class="faded">
+    <path d="M240 400 L360 400 L420 530 L180 530 Z" fill="#d1e7dd" stroke="#000" />
+    <text x="300" y="455" text-anchor="middle" class="subtitle">Temporal Conv Decoder</text>
+    <text x="300" y="475" text-anchor="middle" class="small">Transposed Dilated Conv</text>
+    <text x="300" y="495" text-anchor="middle" class="small">Weight Norm, ReLU, Dropout</text>
+  </g>
+  
+  <!-- Output (Faded) -->
+  <g class="faded">
+    <rect x="240" y="560" width="120" height="60" fill="#f0f0f0" stroke="#000" />
+    <text x="300" y="585" text-anchor="middle" class="subtitle">Reconstructed</text>
+    <text x="300" y="605" text-anchor="middle">Trajectory</text>
+  </g>
+  
+  <!-- Arrows -->
+  <defs>
+    <marker id="arrowhead" markerWidth="10" markerHeight="7" refX="0" refY="3.5" orient="auto">
+      <polygon points="0 0, 10 3.5, 0 7" fill="#000" />
+    </marker>
+    <marker id="highlight-arrowhead" markerWidth="10" markerHeight="7" refX="0" refY="3.5" orient="auto">
+      <polygon points="0 0, 10 3.5, 0 7" fill="#ff6600" />
+    </marker>
+  </defs>
+  
+  <!-- Active Flow Arrows -->
+  <line x1="300" y1="110" x2="300" y2="140" class="arrow highlight-arrow" marker-end="url(#highlight-arrowhead)" />
+  <line x1="300" y1="270" x2="300" y2="310" class="arrow highlight-arrow" marker-end="url(#highlight-arrowhead)" />
+  
+  <!-- Faded Arrows -->
+  <g class="faded">
+    <line x1="210" y1="340" x2="240" y2="340" class="arrow" marker-end="url(#arrowhead)" /> 
+    <line x1="300" y1="370" x2="300" y2="400" class="arrow" marker-end="url(#arrowhead)" />
+    <line x1="70" y1="110" x2="70" y2="460" class="arrow" />
+    <line x1="70" y1="460" x2="212" y2="460" class="arrow" marker-end="url(#arrowhead)" />
+    <line x1="70" y1="205" x2="212" y2="205" class="arrow" marker-end="url(#arrowhead)" />
+    <line x1="300" y1="530" x2="300" y2="560" class="arrow" marker-end="url(#arrowhead)" />
+  </g>
+  
+  <!-- Embeddings Arrow (Highlighted) -->
+  <line x1="360" y1="340" x2="420" y2="340" class="arrow highlight-arrow" marker-end="url(#highlight-arrowhead)" />
+  <text x="365" y="320" class="highlight-text">Embeddings</text>
+  
+  <!-- Downstream Tasks -->
+  <text x="570" y="280" text-anchor="middle" class="subtitle highlight-text">Downstream Tasks</text>
+  
+  <!-- Task 1: Clustering -->
+  <rect x="490" y="300" width="140" height="50" rx="5" ry="5" class="downstream-box" />
+  <text x="560" y="325" text-anchor="middle" class="subtitle">Clustering</text>
+  <text x="560" y="343" text-anchor="middle" class="small">Group similar trajectories</text>
+  
+  <!-- Task 2: Anomaly Detection -->
+  <rect x="490" y="360" width="140" height="50" rx="5" ry="5" class="downstream-box" />
+  <text x="560" y="385" text-anchor="middle" class="subtitle">Anomaly Detection</text>
+  <text x="560" y="403" text-anchor="middle" class="small">Identify unusual patterns</text>
+  
+  <!-- Task 3: Representative Selection -->
+  <rect x="490" y="420" width="140" height="50" rx="5" ry="5" class="downstream-box" />
+  <text x="560" y="445" text-anchor="middle" class="subtitle">Core-Set</text>
+  <text x="560" y="463" text-anchor="middle" class="small">Trajectory Extraction</text>
+  
+  <!-- Task 4: Transfer Learning -->
+  <!-- <rect x="490" y="480" width="140" height="50" rx="5" ry="5" class="downstream-box" />
+  <text x="560" y="505" text-anchor="middle" class="subtitle">Transfer Learning</text>
+  <text x="560" y="523" text-anchor="middle" class="small">Apply to new domains</text> -->
+  
+  <!-- Connecting arrows to downstream tasks -->
+  <path d="M420 340 Q 445 340 460 325 L 470 325" class="arrow highlight-arrow" marker-end="url(#highlight-arrowhead)" />
+  <path d="M420 340 Q 445 340 460 385 L 470 385" class="arrow highlight-arrow" marker-end="url(#highlight-arrowhead)" />
+  <path d="M420 340 Q 445 340 460 445 L 470 445" class="arrow highlight-arrow" marker-end="url(#highlight-arrowhead)" />
+  <!-- <path d="M420 340 Q 445 340 460 505 L 470 505" class="arrow highlight-arrow" marker-end="url(#highlight-arrowhead)" /> -->
+  
+  <!-- Highlight Title -->
+  <text x="300" y="30" text-anchor="middle" class="title highlight-text">TCVAE Embedding Extraction</text>
+</svg>
