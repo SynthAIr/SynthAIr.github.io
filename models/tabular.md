@@ -8,8 +8,7 @@ nav_order: 1
 
 # Tabular Data Generation
 
-The SynthAIr project developed specialized synthetic data generators to address critical challenges in Air Traffic Management: data scarcity, privacy constraints, and commercial sensitivity. Our tabular data pipeline processes mixed-type operational data including flight schedules, delays, and turnaround times using five complementary approaches, each optimized for different data characteristics and use cases. To learn more, see our research publications: [Pre-Tactical Flight-Delay and Turnaround Forecasting with Synthetic Aviation Data](https://arxiv.org/abs/2508.02294) and [Synthetic Flight Data Generation Using Generative Models](https://doi.org/10.1109/ICNS65417.2025.10976960). Public deliverables describing the tabular data generators are currently under evaluation by the SESAR Joint Undertaking and will be made publicly available upon approval.
-
+The SynthAIr project developed specialized synthetic data generators to address critical challenges in Air Traffic Management: data scarcity, privacy constraints, and commercial sensitivity. Our tabular data pipeline processes mixed-type operational data including flight schedules, delays, and turnaround times using five complementary approaches, each optimized for different data characteristics and use cases. To learn more, see our research publications: [Pre-Tactical Flight-Delay and Turnaround Forecasting with Synthetic Aviation Data](https://arxiv.org/abs/2508.02294) and [Synthetic Flight Data Generation Using Generative Models](https://doi.org/10.1109/ICNS65417.2025.10976960).Open-source implementations are available in our [tabular generators repositories](/repositories/repositories.html#tabular-data-generators).  Public deliverables describing the tabular data generators are currently under evaluation by the SESAR Joint Undertaking and will be made publicly available upon approval.
 ## Overview
 
 Tabular synthetic data generation in aviation requires handling complex mixed-type datasets with categorical features (airlines, airports, aircraft types), continuous variables (delays, durations), and temporal information (schedules, timestamps). Our approach addresses three fundamental challenges:
@@ -112,52 +111,13 @@ Our comprehensive evaluation spans five dimensions ensuring synthetic data maint
 - **Likelihood-based Assessment**: Bayesian Network and Gaussian Mixture Model likelihood
 - **Detection Difficulty**: Logistic regression classifier performance (synthetic vs. real)
 
+### Privacy Protection
+Privacy evaluation uses **Distance to Closest Record (DCR)** metrics measuring how closely synthetic records resemble real training data:
+
+- **Baseline Protection**: Compares synthetic-to-real distances against random data baseline
+- **Overfitting Protection**: Tests memorization by comparing proximity to training versus holdout sets
+
 ### Utility Evaluation
 - **Predictive Performance**: RMSE, MAE, R² metrics across prediction tasks
 - **Feature Importance Alignment**: Cosine similarity of feature importance vectors
 - **Utility Scores**: Normalized performance ratios quantifying synthetic-to-real substitutability
-
-## Performance Results
-
-### Model Comparison
-
-| Model | Utility Score | Key Strengths | Best Use Case |
-|-------|---------------|---------------|---------------|
-| **REaLTabFormer** | 94-97% | Highest fidelity, feature preservation | High-stakes predictions |
-| **TabSyn** | 64-93% | Complex correlations, fast sampling | Large-scale data augmentation |
-| **CTGAN** | 60-74% | Conditional generation, rare events | Targeted scenario modeling |
-| **TVAE** | 55-70% | Stable training, lightweight | Rapid prototyping |
-| **Gaussian Copula** | 42-56% | Strong privacy, no training needed | External data sharing |
-
-### Prediction Task Results
-
-**Turnaround Time Prediction** (Highest Predictability: R² ≤ 0.44)
-- Most deterministic aviation process
-- REaLTabFormer achieves 97% utility retention
-- Strong feature alignment across all advanced models
-
-**Departure Delay Prediction** (Moderate Predictability: R² ≤ 0.30)
-- Temporal patterns dominate (scheduled hour most important)
-- REaLTabFormer maintains 96% performance
-- Complex interaction modeling crucial
-
-**Arrival Delay Prediction** (Lowest Predictability: R² ≤ 0.30)
-- Most challenging due to cumulative uncertainties
-- REaLTabFormer achieves 95% utility retention
-- Requires sophisticated dependency modeling
-
-## Selection Guidelines
-
-
-**For High-Fidelity Simulation**: Deploy REaLTabFormer or TabSyn when prediction accuracy and feature relationship preservation are critical.
-
-**For Large-Scale Augmentation**: Choose TVAE for rapid dataset expansion with moderate utility requirements.
-
-**For Conditional Generation**: Apply CTGAN when generating specific flight scenarios or handling rare operational events.
-
-## Technical Implementation
-
-All models are available as open-source implementations:
-- **GitHub Repository**: [github.com/SynthAIr/syntabair](https://github.com/SynthAIr/syntabair)
-- **Datasets**: EU flight operations (1.7M+ records), BTS domestic flights
-- **Evaluation Framework**: Comprehensive fidelity and utility assessment tools
