@@ -3,6 +3,7 @@ layout: page
 title: Generative Models
 nav_order: 3
 has_children: true
+nav_fold: false
 ---
 
 # Generative Models for Aviation Data

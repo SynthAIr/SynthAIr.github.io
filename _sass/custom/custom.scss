@@ -1,0 +1,25 @@
+// Custom styles to keep navigation expanded by default
+.nav-list .nav-list {
+  display: block !important;
+}
+
+// Keep the expand/collapse button visible but ensure content is shown
+.nav-list-expander {
+  transform: rotate(90deg);
+}
+
+// Alternative approach: force all child navigation lists to be visible
+.site-nav .nav-list-item .nav-list {
+  display: block !important;
+}
+
+// Style only child navigation links (second level) to appear clickable
+.nav-list .nav-list .nav-list-item .nav-list-link {
+  color: #0066cc !important;
+  text-decoration: none;
+}
+
+.nav-list .nav-list .nav-list-item .nav-list-link:hover {
+  color: #004499 !important;
+  text-decoration: underline;
+}
