@@ -92,6 +92,12 @@ Flow Matching (FM) represents a modern approach to generative modeling that offe
 
 ### Latent Flow Matching
 
+<div align="center">
+  <img src="../figures/lfm.svg" />
+  <br>
+  <em><strong>Figure 4: Latent Flow Matching Architecture.</strong> The diagram illustrates how flight trajectory data is processed through a VAE encoder to produce latent representations, which are then matched with random noise via a Flow Matching Network that learns a velocity field. During training, the model learns to match velocities between latent codes and Gaussian noise, while sampling involves solving an ODE to transform noise into meaningful latent vectors, which are finally decoded to generate flight trajectories.</em>
+</div>
+
 **Two-Stage Architecture**: Similar to latent diffusion, Latent Flow Matching (LFM) combines the efficiency of autoencoders with flow-based generation:
 
 1. **Stage 1**: A Temporal Convolutional Variational Autoencoder (TCVAE) encodes trajectories into meaningful latent representations

@@ -1,0 +1,110 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="80 100 1000 460">
+ <rect x="60" y="60" width="1050" height="500" fill="#fff"/>
+  
+  <!-- Title -->
+  <!-- <text x="600" y="100" text-anchor="middle" font-family="Arial" font-size="24" font-weight="bold" fill="#333333">Latent Flow Matching Architecture</text> -->
+  
+  <!-- Input label -->
+  <text x="140" y="190" text-anchor="middle" font-family="Arial" font-size="18" font-weight="bold" fill="#0066cc">Input Flight</text>
+  <text x="140" y="210" text-anchor="middle" font-family="Arial" font-size="18" font-weight="bold" fill="#0066cc">Trajectory</text>
+  
+  <!-- VAE ENCODER SECTION -->
+  <rect x="220" y="120" width="220" height="200" fill="#e6f0ff" stroke="#3366cc" stroke-width="2" rx="8" ry="8"/>
+  <text x="330" y="145" text-anchor="middle" font-family="Arial" font-size="16" font-weight="bold" fill="#3366cc">VAE Encoder</text>
+  
+  <!-- Encoder component -->
+  <rect x="240" y="165" width="180" height="50" fill="#ffffff" stroke="#3366cc" stroke-width="1" rx="5" ry="5"/>
+  <text x="330" y="185" text-anchor="middle" font-family="Arial" font-size="13" font-weight="bold">Encoder Network</text>
+  <text x="330" y="205" text-anchor="middle" font-family="Arial" font-size="11">Projects data to latent space</text>
+  
+  <!-- KL regularization -->
+  <rect x="240" y="240" width="180" height="50" fill="#ffffff" stroke="#3366cc" stroke-width="1" rx="5" ry="5"/>
+  <text x="330" y="260" text-anchor="middle" font-family="Arial" font-size="13" font-weight="bold">KL Regularization</text>
+  <text x="330" y="280" text-anchor="middle" font-family="Arial" font-size="11">Ensures well-formed latent space</text>
+  
+  <!-- LATENT SPACE SECTION -->
+  <rect x="460" y="120" width="200" height="240" fill="#ffebeb" stroke="#cc3333" stroke-width="2" rx="8" ry="8"/>
+  <text x="560" y="145" text-anchor="middle" font-family="Arial" font-size="16" font-weight="bold" fill="#cc3333">Latent Flow Matching</text>
+  
+  <!-- Latent representation -->
+  <rect x="480" y="165" width="160" height="50" fill="#ffffff" stroke="#cc3333" stroke-width="1" rx="5" ry="5"/>
+  <text x="560" y="185" text-anchor="middle" font-family="Arial" font-size="13" font-weight="bold">Latent Representation</text>
+  <text x="560" y="205" text-anchor="middle" font-family="Arial" font-size="11">z₀ ↔ Encoded data point</text>
+  
+  <!-- Flow matching model -->
+  <rect x="480" y="230" width="160" height="110" fill="#ffffff" stroke="#cc3333" stroke-width="1" rx="5" ry="5"/>
+  <text x="560" y="250" text-anchor="middle" font-family="Arial" font-size="13" font-weight="bold">Flow Matching Network</text>
+  <text x="560" y="270" text-anchor="middle" font-family="Arial" font-size="11">Learns velocity field v(z,t)</text>
+  <text x="560" y="290" text-anchor="middle" font-family="Arial" font-size="11">Transforms z₁ ~ N(0,I) to z₀</text>
+  <text x="560" y="310" text-anchor="middle" font-family="Arial" font-size="11">Using constant velocity ODE</text>
+  <text x="560" y="330" text-anchor="middle" font-family="Arial" font-size="11">with linear interpolation</text>
+  
+  <!-- DECODER SECTION -->
+  <rect x="680" y="120" width="220" height="200" fill="#e6ffe6" stroke="#339933" stroke-width="2" rx="8" ry="8"/>
+  <text x="790" y="145" text-anchor="middle" font-family="Arial" font-size="16" font-weight="bold" fill="#339933">VAE Decoder</text>
+  
+  <!-- Decoder component -->
+  <rect x="700" y="190" width="180" height="60" fill="#ffffff" stroke="#339933" stroke-width="1" rx="5" ry="5"/>
+  <text x="790" y="210" text-anchor="middle" font-family="Arial" font-size="13" font-weight="bold">Decoder Network</text>
+  <text x="790" y="230" text-anchor="middle" font-family="Arial" font-size="11">Converts latent vectors</text>
+  <text x="790" y="245" text-anchor="middle" font-family="Arial" font-size="11">back to trajectory space</text>
+  
+  <!-- Output label -->
+  <text x="1000" y="190" text-anchor="middle" font-family="Arial" font-size="18" font-weight="bold" fill="#0066cc">Generated Flight</text>
+  <text x="1000" y="210" text-anchor="middle" font-family="Arial" font-size="18" font-weight="bold" fill="#0066cc">Trajectory</text>
+  
+  <!-- TRAINING/SAMPLING FLOW SECTION -->
+  <rect x="200" y="380" width="700" height="160" fill="#f9f9f9" stroke="#666666" stroke-width="2" rx="8" ry="8"/>
+  <text x="550" y="405" text-anchor="middle" font-family="Arial" font-size="16" font-weight="bold" fill="#333333">Training and Sampling Processes</text>
+  
+  <!-- Training process -->
+  <rect x="220" y="420" width="320" height="110" fill="#f0f8ff" stroke="#3366cc" stroke-width="1" rx="5" ry="5"/>
+  <text x="380" y="440" text-anchor="middle" font-family="Arial" font-size="14" font-weight="bold" fill="#3366cc">Training Flow</text>
+  
+ 
+  <text x="230" y="460" font-family="Arial" font-size="12">1. Encode trajectory τ to latent code z₀ = E(τ)</text>
+  <text x="230" y="480" font-family="Arial" font-size="12">2. Sample noise z₁ ~ N(0,I) and time t ~ U[0,1]</text>
+  <text x="230" y="500" font-family="Arial" font-size="12">3. Set z_t = (1-t)z₀ + tz₁ (linear interpolation)</text>
+  <text x="230" y="520" font-family="Arial" font-size="12">4. Train network to predict velocity v(z_t,t) ≈ z₁-z₀</text>
+  
+  <!-- Sampling process -->
+  <rect x="560" y="420" width="320" height="110" fill="#fff0f0" stroke="#cc3333" stroke-width="1" rx="5" ry="5"/>
+  <text x="720" y="440" text-anchor="middle" font-family="Arial" font-size="14" font-weight="bold" fill="#cc3333">Sampling Flow</text>
+  
+  <text x="570" y="460" font-family="Arial" font-size="12">1. Sample random noise z₁ ~ N(0,I)</text>
+  <text x="570" y="480" font-family="Arial" font-size="12">2. Solve ODE: dz_t = v(z_t,t)dt via numerical integration</text>
+  <text x="570" y="500" font-family="Arial" font-size="12">3. Obtain z₀ from z₁ by integrating velocity field</text>
+  <text x="570" y="520" font-family="Arial" font-size="12">4. Decode latent vector z₀ to generate trajectory τ̂ = D(z₀)</text>
+  
+  <!-- Connection Arrows - Simple lines -->
+  <!-- Input to encoder -->
+  <line x1="190" y1="200" x2="220" y2="200" stroke="#555555" stroke-width="2"/>
+  <polygon points="215,195 225,200 215,205" fill="#555555"/>
+  
+  <!-- Within encoder -->
+  <line x1="330" y1="215" x2="330" y2="240" stroke="#3366cc" stroke-width="2"/>
+  <polygon points="325,235 330,245 335,235" fill="#3366cc"/>
+  
+  <!-- Encoder to latent -->
+  <line x1="440" y1="220" x2="480" y2="220" stroke="#555555" stroke-width="2"/>
+  <polygon points="475,215 485,220 475,225" fill="#555555"/>
+  
+  <!-- Within latent -->
+  <line x1="560" y1="215" x2="560" y2="230" stroke="#cc3333" stroke-width="2"/>
+  <polygon points="555,225 560,235 565,225" fill="#cc3333"/>
+  
+  <!-- Latent to decoder -->
+  <line x1="640" y1="220" x2="700" y2="220" stroke="#555555" stroke-width="2"/>
+  <polygon points="695,215 705,220 695,225" fill="#555555"/>
+  
+  <!-- Decoder to output -->
+  <line x1="880" y1="200" x2="930" y2="200" stroke="#555555" stroke-width="2"/>
+  <polygon points="925,195 935,200 925,205" fill="#555555"/>
+  
+  <!-- SAMPLING FLOW - simplified paths -->
+  <path d="M560,340 C560,360 480,360 480,380" stroke="#3366cc" stroke-width="2" stroke-dasharray="5,3" fill="none"/>
+  
+  <path d="M720,420 C720,380 660,350 640,290" stroke="#cc3333" stroke-width="2" stroke-dasharray="5,3" fill="none"/>
+  
+  <path d="M880,280 C880,320 880,380 800,420" stroke="#339933" stroke-width="2" stroke-dasharray="5,3" fill="none"/>
+</svg>
