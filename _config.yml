@@ -16,8 +16,6 @@ funding_acknowledgement: "This project has received funding from the SESAR 3 Joi
 
 # Navigation structure
 nav:
-  - title: "About"
-    url: /about/
   - title: "Models"
     url: /models/
   - title: "Embeddings"
