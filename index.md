@@ -21,7 +21,7 @@ The aviation industry faces persistent challenges in accessing data for developi
 
 
 <div align="center">
-  <img src="figures/u1.svg" />
+  <img src="figures/use_cases.svg" />
   <br>
   <em><strong>Figure 2: SynthAIr Use Cases Across the Flight Timeline.</strong> Six operational use cases span the complete flight lifecycle, from passenger flow prediction (UC3) through scheduling (UC6), departure delays (UC2), trajectory generation (UC4), diversion prediction (UC5), arrival delays (UC2), and turnaround time optimization (UC1).</em>
 </div>

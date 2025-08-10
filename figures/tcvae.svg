@@ -1,0 +1,64 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="600" height="750" viewBox="80 30 440 590">
+  <style>
+    text { font-family: Arial, sans-serif; font-size: 14px; }
+    .title { font-size: 20px; font-weight: bold; }
+    .subtitle { font-size: 14px; font-weight: bold; }
+    .small { font-size: 12px; }
+  </style>
+
+<!-- white background -->
+  <rect x="80" y="30" width="440" height="590" fill="#ffffff" />
+
+  <!-- Input Trajectory -->
+  <rect x="240" y="50" width="120" height="60" fill="#f0f0f0" stroke="#000" />
+  <text x="300" y="75" text-anchor="middle">Input</text>
+  <text x="300" y="95" text-anchor="middle">Trajectory</text>
+  
+  <!-- Conditional Input -->
+  <rect x="390" y="50" width="120" height="60" fill="#ffd7e8" stroke="#000" />
+  <text x="450" y="75" text-anchor="middle">Conditional</text>
+  <text x="450" y="95" text-anchor="middle">Input (Optional)</text>
+  
+  <!-- Encoder -->
+  <path d="M180 140 L420 140 L360 270 L240 270 Z" fill="#d1e7dd" stroke="#000" />
+  <text x="300" y="180" text-anchor="middle" class="subtitle">Temporal Conv Encoder</text>
+  <text x="300" y="200" text-anchor="middle" class="small">Dilated Causal Convolutions</text>
+  <text x="300" y="220" text-anchor="middle" class="small">Weight Norm, ReLU, Dropout</text>
+  
+  <!-- Latent Space -->
+  <rect x="240" y="300" width="120" height="60" fill="#cfe2ff" stroke="#000" />
+  <text x="300" y="335" text-anchor="middle">Latent Space</text>
+  
+  <!-- VampPrior -->
+  <rect x="90" y="290" width="120" height="80" fill="#fff3cd" stroke="#000" />
+  <text x="150" y="315" text-anchor="middle" class="subtitle">VampPrior</text>
+  <text x="150" y="335" text-anchor="middle" class="small">Mixture of</text>
+  <text x="150" y="355" text-anchor="middle" class="small">Variational Posteriors</text>
+  
+  <!-- Decoder -->
+  <path d="M240 390 L360 390 L420 520 L180 520 Z" fill="#d1e7dd" stroke="#000" />
+  <text x="300" y="445" text-anchor="middle" class="subtitle">Temporal Conv Decoder</text>
+  <text x="300" y="465" text-anchor="middle" class="small">Transposed Dilated Conv</text>
+  <text x="300" y="485" text-anchor="middle" class="small">Weight Norm, ReLU, Dropout</text>
+  
+  <!-- Output -->
+  <rect x="240" y="550" width="120" height="60" fill="#f0f0f0" stroke="#000" />
+  <text x="300" y="575" text-anchor="middle">Reconstructed</text>
+  <text x="300" y="595" text-anchor="middle">Trajectory</text>
+  
+  <!-- Arrows -->
+  <defs>
+    <marker id="arrowhead" markerWidth="10" markerHeight="7" refX="0" refY="3.5" orient="auto">
+      <polygon points="0 0, 10 3.5, 0 7" />
+    </marker>
+  </defs>
+  <line x1="300" y1="110" x2="300" y2="140" stroke="#000" marker-end="url(#arrowhead)" />
+  <!-- <line x1="450" y1="110" x2="450" y2="140" stroke="#000" marker-end="url(#arrowhead)" /> -->
+  <line x1="300" y1="270" x2="300" y2="300" stroke="#000" marker-end="url(#arrowhead)" />
+  <line x1="210" y1="330" x2="240" y2="330" stroke="#000" marker-end="url(#arrowhead)" /> 
+  <line x1="300" y1="360" x2="300" y2="390" stroke="#000" marker-end="url(#arrowhead)" />
+  <line x1="450" y1="110" x2="450" y2="450" stroke="#000" />
+  <line x1="450" y1="450" x2="388" y2="450" stroke="#000" marker-end="url(#arrowhead)" />
+  <line x1="450" y1="205" x2="388" y2="205" stroke="#000" marker-end="url(#arrowhead)" />
+  <line x1="300" y1="520" x2="300" y2="550" stroke="#000" marker-end="url(#arrowhead)" />
+</svg>
