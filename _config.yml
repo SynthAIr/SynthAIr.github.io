@@ -1,8 +1,12 @@
-title: "SynthAIr Project"
+title: "SynthAIr"
 description: "Improved ATM Automation and Simulation through AI-based Universal Models for Synthetic Data Generation."
 theme: just-the-docs
 url: "https://synthair.github.io"
 baseurl: ""
+
+# Site branding
+logo: "/figures/synthair_logo.png"
+favicon_ico: "/figures/synthair_icon.ico"
 
 # Social links
 github_username: SynthAIr
