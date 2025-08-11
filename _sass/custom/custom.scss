@@ -48,8 +48,7 @@
 }
 
 .nav-list-expander {
-  transform: rotate(90deg);
-  transition: transform 0.2s ease;
+  display: none !important; // Hide navigation arrows completely
 }
 
 .site-nav .nav-list-item .nav-list {
