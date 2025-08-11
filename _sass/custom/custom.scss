@@ -1,201 +1,364 @@
-// Custom styles to keep navigation expanded by default
+// ===== PROFESSIONAL ACADEMIC STYLING =====
+
+// Import Google Fonts for academic typography
+@import url('https://fonts.googleapis.com/css2?family=Source+Serif+4:ital,opsz,wght@0,8..60,300;0,8..60,400;0,8..60,500;0,8..60,600;0,8..60,700;1,8..60,400;1,8..60,500&family=Inter:wght@300;400;500;600;700&display=swap');
+
+// Academic Color Palette
+:root {
+  --academic-navy: #1e293b;
+  --academic-slate: #334155;
+  --academic-blue: #3b82f6;
+  --academic-light-blue: #dbeafe;
+  --academic-gray: #64748b;
+  --academic-light-gray: #f1f5f9;
+  --academic-accent: #0f172a;
+  --academic-border: #e2e8f0;
+  --academic-text: #0f172a;
+  --academic-muted: #64748b;
+  --academic-background: #ffffff;
+  --academic-section: #f8fafc;
+}
+
+// Base Typography Improvements
+.main-content {
+  font-family: 'Source Serif 4', Georgia, serif;
+  line-height: 1.7;
+  color: var(--academic-text);
+  font-size: 16px;
+}
+
+.main-content h1, .main-content h2, .main-content h3, .main-content h4 {
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+  font-weight: 600;
+  color: var(--academic-navy);
+  letter-spacing: -0.025em;
+}
+
+// ===== PROFESSIONAL NAVIGATION STYLING =====
+
+// Sidebar container improvements
+.side-bar {
+  background-color: #f8fafc !important;
+  border-right: 1px solid var(--academic-border) !important;
+}
+
+// Navigation structure
 .nav-list .nav-list {
   display: block !important;
 }
 
-// Keep the expand/collapse button visible but ensure content is shown
 .nav-list-expander {
   transform: rotate(90deg);
+  transition: transform 0.2s ease;
 }
 
-// Alternative approach: force all child navigation lists to be visible
 .site-nav .nav-list-item .nav-list {
   display: block !important;
 }
 
-// Style only child navigation links (second level) to appear clickable
-.nav-list .nav-list .nav-list-item .nav-list-link {
-  color: #0066cc !important;
+// Top-level navigation links styling
+.nav-list .nav-list-item .nav-list-link {
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+  font-weight: 600;
+  font-size: 0.95rem;
+  color: var(--academic-slate) !important;
   text-decoration: none;
+  padding: 0.75rem 1rem;
+  border-radius: 6px;
+  transition: all 0.2s ease;
+  display: block;
+  margin: 0.2rem 0;
+  border-left: 3px solid transparent;
+}
+
+.nav-list .nav-list-item .nav-list-link:hover {
+  color: var(--academic-navy) !important;
+  background-color: var(--academic-light-blue);
+  text-decoration: none;
+  border-left: 3px solid var(--academic-blue);
+}
+
+// Current page highlighting
+.nav-list .nav-list-item .nav-list-link[aria-current="page"] {
+  background-color: var(--academic-blue) !important;
+  color: white !important;
+  font-weight: 600;
+  border-left: 3px solid var(--academic-navy);
+}
+
+// Second-level navigation (sub-items)
+.nav-list .nav-list .nav-list-item .nav-list-link {
+  color: var(--academic-blue) !important;
+  font-size: 0.875rem;
+  font-weight: 500;
+  padding: 0.5rem 1rem 0.5rem 2rem;
+  border-left: 2px solid transparent;
+  margin: 0.1rem 0;
+  position: relative;
+}
+
+.nav-list .nav-list .nav-list-item .nav-list-link::before {
+  content: '▸';
+  position: absolute;
+  left: 1.5rem;
+  color: var(--academic-gray);
+  font-size: 0.7rem;
+  transition: color 0.2s ease;
 }
 
 .nav-list .nav-list .nav-list-item .nav-list-link:hover {
-  color: #004499 !important;
-  text-decoration: underline;
+  color: var(--academic-navy) !important;
+  background-color: rgba(59, 130, 246, 0.08);
+  border-left: 2px solid var(--academic-blue);
 }
 
-// ===== HOMEPAGE STYLING IMPROVEMENTS =====
+.nav-list .nav-list .nav-list-item .nav-list-link:hover::before {
+  color: var(--academic-blue);
+}
 
-// Hero section styling
+// Site title styling - simpler approach
+.site-title {
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif !important;
+  font-weight: 700 !important;
+  font-size: 1.5rem !important;
+  color: var(--academic-navy) !important;
+}
+
+// Navigation sections spacing
+.nav-list-item {
+  margin-bottom: 0.5rem;
+}
+
+// Page title styling
+.main-content-wrap .main-header {
+  border-bottom: 1px solid var(--academic-border);
+  padding-bottom: 1rem;
+  margin-bottom: 2rem;
+}
+
+// Breadcrumb navigation
+.breadcrumb-nav {
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+  font-size: 0.85rem;
+  color: var(--academic-muted);
+}
+
+.breadcrumb-nav-list-item {
+  color: var(--academic-slate);
+}
+
+.breadcrumb-nav-list-item::after {
+  color: var(--academic-gray);
+}
+
+// ===== PROFESSIONAL HOMEPAGE STYLING =====
+
+// Hero section styling - refined and professional
 .main-content h1:first-of-type {
-  font-size: 2.5rem;
+  font-size: 2.75rem;
   font-weight: 700;
-  color: #1f2937;
-  margin-bottom: 1.5rem;
-  line-height: 1.2;
+  color: var(--academic-navy);
+  margin-bottom: 2rem;
+  line-height: 1.15;
   text-align: left;
-  background: linear-gradient(135deg, #1f2937, #4338ca);
-  background-clip: text;
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+  letter-spacing: -0.02em;
 }
 
-// Improved intro paragraph styling
+// Professional intro paragraph styling
 .main-content p:first-of-type {
-  font-size: 1.25rem;
-  line-height: 1.7;
-  color: #374151;
+  font-size: 1.2rem;
+  line-height: 1.8;
+  color: var(--academic-slate);
   margin-bottom: 2.5rem;
   text-align: left;
   font-weight: 400;
+  max-width: 90%;
 }
 
-// Enhanced image containers
+// Professional figure containers
 .main-content div[align="center"] {
   margin: 3rem 0;
   padding: 2rem;
-  background: #f8fafc;
-  border-radius: 12px;
-  border: 1px solid #e2e8f0;
-  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+  background: var(--academic-section);
+  border-radius: 8px;
+  border: 1px solid var(--academic-border);
+  box-shadow: 0 2px 4px rgba(15, 23, 42, 0.05);
 }
 
 .main-content div[align="center"] img {
   max-width: 100%;
   height: auto;
-  border-radius: 8px;
-  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
-  transition: transform 0.3s ease;
+  border-radius: 6px;
+  box-shadow: 0 4px 8px rgba(15, 23, 42, 0.1);
+  transition: box-shadow 0.3s ease;
 }
 
 .main-content div[align="center"] img:hover {
-  transform: scale(1.02);
+  box-shadow: 0 8px 16px rgba(15, 23, 42, 0.15);
 }
 
-// Enhanced figure captions
+// Academic figure captions
 .main-content div[align="center"] em {
   display: block;
-  margin-top: 1rem;
-  font-size: 0.95rem;
-  color: #6b7280;
-  line-height: 1.5;
+  margin-top: 1.2rem;
+  font-size: 0.9rem;
+  color: var(--academic-muted);
+  line-height: 1.6;
   text-align: left;
   max-width: 100%;
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+  font-style: normal;
 }
 
 .main-content div[align="center"] em strong {
-  color: #374151;
+  color: var(--academic-slate);
   font-weight: 600;
+  display: block;
+  margin-bottom: 0.25rem;
 }
 
-// Section headers
+// Professional section headers
 .main-content h2 {
-  font-size: 2rem;
+  font-size: 1.875rem;
   font-weight: 600;
-  color: #1f2937;
-  margin: 3rem 0 1.5rem 0;
-  border-bottom: 3px solid #4338ca;
-  padding-bottom: 0.5rem;
+  color: var(--academic-navy);
+  margin: 3.5rem 0 1.5rem 0;
+  border-bottom: 2px solid var(--academic-border);
+  padding-bottom: 0.75rem;
   position: relative;
+  letter-spacing: -0.025em;
 }
 
 .main-content h2::after {
   content: '';
   position: absolute;
-  bottom: -3px;
+  bottom: -2px;
   left: 0;
-  width: 60px;
-  height: 3px;
-  background: linear-gradient(90deg, #4338ca, #7c3aed);
-  border-radius: 2px;
+  width: 40px;
+  height: 2px;
+  background: var(--academic-blue);
+  border-radius: 1px;
 }
 
 .main-content h3 {
-  font-size: 1.5rem;
+  font-size: 1.375rem;
   font-weight: 600;
-  color: #374151;
-  margin: 2rem 0 1rem 0;
+  color: var(--academic-slate);
+  margin: 2.5rem 0 1.25rem 0;
+  letter-spacing: -0.015em;
 }
 
-// Research Challenge section styling
-.main-content h2:nth-of-type(1) + p,
-.main-content h2:nth-of-type(1) + p + ul {
-  background: #fef3c7;
-  padding: 1.5rem;
-  border-radius: 8px;
-  border-left: 4px solid #f59e0b;
-  margin-bottom: 1.5rem;
+// Professional Research Challenge section styling - only on homepage
+.main-content h2:contains("Research Challenge") + p,
+.main-content h2:contains("Innovation") + p {
+  background: #fef7ed;
+  padding: 2rem;
+  border-radius: 6px;
+  border-left: 3px solid #ea580c;
+  margin-bottom: 2rem;
+  box-shadow: 0 1px 3px rgba(15, 23, 42, 0.05);
 }
 
 .main-content ul li {
-  margin-bottom: 0.5rem;
-  line-height: 1.6;
+  margin-bottom: 0.75rem;
+  line-height: 1.7;
+  font-size: 0.95rem;
 }
 
 .main-content ul li strong {
-  color: #374151;
+  color: var(--academic-slate);
   font-weight: 600;
 }
 
-// Use cases styling
-.main-content p[style*="strong"] {
-  background: #f0f9ff;
-  padding: 1rem;
-  border-radius: 8px;
-  border-left: 4px solid #0ea5e9;
-  margin: 1rem 0;
-  font-weight: 500;
+// Professional Use Cases styling with hover effects
+.main-content p:has(strong):has(a[href*="use-cases"]) {
+  background: var(--academic-light-blue);
+  padding: 1.5rem;
+  border-radius: 6px;
+  border-left: 3px solid var(--academic-blue);
+  margin: 1.5rem 0;
+  font-weight: 400;
+  box-shadow: 0 1px 3px rgba(15, 23, 42, 0.05);
+  transition: all 0.3s ease;
+  cursor: pointer;
 }
 
-// Model portfolio sections
+.main-content p:has(strong):has(a[href*="use-cases"]):hover {
+  box-shadow: 0 4px 8px rgba(15, 23, 42, 0.1);
+  transform: translateY(-1px);
+  border-left: 3px solid var(--academic-navy);
+}
+
+// Professional Model portfolio sections
 .main-content h3 + p {
-  background: #f1f5f9;
-  padding: 1rem;
-  border-radius: 8px;
-  margin-bottom: 1rem;
-  font-style: italic;
-  border-left: 3px solid #64748b;
+  background: var(--academic-section);
+  padding: 1.25rem;
+  border-radius: 6px;
+  margin-bottom: 1.5rem;
+  font-style: normal;
+  border-left: 3px solid var(--academic-gray);
+  font-size: 0.95rem;
+  color: var(--academic-slate);
 }
 
 .main-content ul li:has(strong) {
-  background: #ffffff;
-  padding: 0.75rem;
+  background: var(--academic-background);
+  padding: 1rem;
   border-radius: 6px;
-  border: 1px solid #e2e8f0;
-  margin-bottom: 0.5rem;
-  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+  border: 1px solid var(--academic-border);
+  margin-bottom: 0.75rem;
+  box-shadow: 0 1px 3px rgba(15, 23, 42, 0.08);
+  transition: box-shadow 0.2s ease;
 }
 
-// Applications section with emoji styling
-.main-content p:has(strong):contains("✈️"),
-.main-content p:has(strong):contains("🔒"),
-.main-content p:has(strong):contains("🎯"),
-.main-content p:has(strong):contains("📊"),
-.main-content p:has(strong):contains("🚀"),
-.main-content p:has(strong):contains("🌍") {
-  background: linear-gradient(135deg, #f0f9ff, #ecfdf5);
-  padding: 1rem 1.5rem;
-  border-radius: 8px;
-  border-left: 4px solid #10b981;
-  margin: 0.5rem 0;
-  display: flex;
-  align-items: center;
-  font-weight: 500;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+.main-content ul li:has(strong):hover {
+  box-shadow: 0 2px 6px rgba(15, 23, 42, 0.12);
 }
 
-// Consortium section styling
+// Professional Applications section styling with interactions
+.main-content h2 + p[style*="✈"],
+.main-content p:contains("✈️"),
+.main-content p:contains("🔒"),
+.main-content p:contains("🎯"),
+.main-content p:contains("📊"),
+.main-content p:contains("🚀"),
+.main-content p:contains("🌍") {
+  background: #f0fdf4;
+  padding: 1.25rem 1.5rem;
+  border-radius: 6px;
+  border-left: 3px solid #16a34a;
+  margin: 0.75rem 0;
+  font-weight: 400;
+  box-shadow: 0 1px 3px rgba(15, 23, 42, 0.05);
+  line-height: 1.6;
+  transition: all 0.2s ease;
+}
+
+.main-content h2 + p[style*="✈"]:hover,
+.main-content p:contains("✈️"):hover,
+.main-content p:contains("🔒"):hover,
+.main-content p:contains("🎯"):hover,
+.main-content p:contains("📊"):hover,
+.main-content p:contains("🚀"):hover,
+.main-content p:contains("🌍"):hover {
+  box-shadow: 0 3px 6px rgba(15, 23, 42, 0.1);
+  border-left: 3px solid #15803d;
+  transform: translateY(-1px);
+}
+
+// Professional Consortium section styling
 .main-content div[style*="inline-block"] {
-  background: #ffffff !important;
-  border: 1px solid #e2e8f0 !important;
-  border-radius: 12px !important;
-  padding: 1.5rem 0.5rem !important;
-  margin: 0.25rem !important;
-  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1) !important;
+  background: var(--academic-background) !important;
+  border: 1px solid var(--academic-border) !important;
+  border-radius: 8px !important;
+  padding: 1.75rem 1rem !important;
+  margin: 0.5rem !important;
+  box-shadow: 0 2px 4px rgba(15, 23, 42, 0.08) !important;
   transition: all 0.3s ease !important;
   vertical-align: top !important;
   box-sizing: border-box !important;
-  height: 200px !important;
+  height: 180px !important;
   display: inline-flex !important;
   flex-direction: column !important;
   justify-content: center !important;
@@ -203,15 +366,15 @@
 }
 
 .main-content div[style*="inline-block"]:hover {
-  transform: translateY(-2px) !important;
-  box-shadow: 0 8px 15px -3px rgba(0, 0, 0, 0.15) !important;
+  transform: translateY(-1px) !important;
+  box-shadow: 0 4px 8px rgba(15, 23, 42, 0.15) !important;
 }
 
 .main-content div[style*="inline-block"] img {
-  filter: grayscale(20%);
+  filter: grayscale(10%);
   transition: filter 0.3s ease;
   margin-bottom: 1rem !important;
-  max-height: 60px !important;
+  max-height: 50px !important;
   object-fit: contain !important;
 }
 
@@ -220,34 +383,201 @@
 }
 
 .main-content div[style*="inline-block"] small {
-  font-size: 0.9rem !important;
-  color: #6b7280 !important;
-  line-height: 1.4 !important;
+  font-size: 0.85rem !important;
+  color: var(--academic-muted) !important;
+  line-height: 1.5 !important;
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif !important;
 }
 
 .main-content div[style*="inline-block"] small strong {
-  color: #374151 !important;
-  font-size: 1rem !important;
+  color: var(--academic-slate) !important;
+  font-size: 0.95rem !important;
   display: block !important;
-  margin-bottom: 0.25rem !important;
+  margin-bottom: 0.3rem !important;
+  font-weight: 600 !important;
 }
 
-// Footer acknowledgment styling
+// Professional Footer acknowledgment styling
 .main-content hr + div[align="center"] {
-  background: #f8fafc;
+  background: var(--academic-section);
   padding: 2rem;
-  border-radius: 12px;
-  border: 1px solid #e2e8f0;
+  border-radius: 8px;
+  border: 1px solid var(--academic-border);
   margin-top: 3rem;
 }
 
 .main-content hr + div[align="center"] em {
-  font-size: 0.95rem;
-  color: #6b7280;
-  line-height: 1.5;
+  font-size: 0.9rem;
+  color: var(--academic-muted);
+  line-height: 1.6;
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+  font-style: normal;
+  font-weight: 400;
 }
 
-// Responsive design
+// ===== ACADEMIC CONTENT SPECIFIC STYLING =====
+
+// Publications page styling
+.main-content h3:has(+ ul li:contains("Authors")),
+.main-content h3:has(+ ul li:contains("DOI")),
+.main-content h3:has(+ ul li:contains("Conference")) {
+  color: var(--academic-navy);
+  font-size: 1.25rem;
+  margin: 2.5rem 0 1rem 0;
+  padding: 1rem;
+  background: var(--academic-light-blue);
+  border-radius: 6px;
+  border-left: 4px solid var(--academic-blue);
+}
+
+// Publication metadata styling
+.main-content ul li:contains("Authors:"),
+.main-content ul li:contains("DOI:"),
+.main-content ul li:contains("Conference:"),
+.main-content ul li:contains("Date:"),
+.main-content ul li:contains("Publisher:") {
+  background: var(--academic-section);
+  padding: 0.5rem;
+  border-radius: 4px;
+  font-size: 0.9rem;
+  margin: 0.25rem 0;
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+}
+
+// DOI and URL links styling
+.main-content a[href*="doi.org"],
+.main-content a[href*="arxiv.org"],
+.main-content a[href*="zenodo.org"] {
+  color: var(--academic-blue);
+  text-decoration: none;
+  font-weight: 500;
+  padding: 0.2rem 0.5rem;
+  background: var(--academic-light-blue);
+  border-radius: 3px;
+  transition: all 0.2s ease;
+}
+
+.main-content a[href*="doi.org"]:hover,
+.main-content a[href*="arxiv.org"]:hover,
+.main-content a[href*="zenodo.org"]:hover {
+  background: var(--academic-blue);
+  color: white;
+}
+
+// Abstract styling
+.main-content ul li:contains("Abstract:") {
+  background: #f8fafc;
+  padding: 1.5rem;
+  border-radius: 8px;
+  border-left: 3px solid var(--academic-gray);
+  margin: 1rem 0;
+  line-height: 1.7;
+  font-size: 0.95rem;
+  text-align: justify;
+}
+
+// Keywords styling
+.main-content ul li:contains("Keywords:") {
+  background: var(--academic-light-gray);
+  padding: 0.75rem;
+  border-radius: 6px;
+  font-size: 0.85rem;
+  font-style: italic;
+  color: var(--academic-muted);
+}
+
+// Use case page styling
+.main-content h2:contains("Overview"),
+.main-content h2:contains("Methodology"),
+.main-content h2:contains("Results"),
+.main-content h2:contains("Context") {
+  background: linear-gradient(135deg, var(--academic-section), #ffffff);
+  padding: 1rem 1.5rem;
+  border-radius: 8px;
+  border: 1px solid var(--academic-border);
+  margin: 2.5rem 0 1.5rem 0;
+}
+
+// Data tables and metrics styling
+.main-content table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 2rem 0;
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+  font-size: 0.9rem;
+}
+
+.main-content table th {
+  background: var(--academic-navy);
+  color: white;
+  padding: 0.75rem;
+  text-align: left;
+  font-weight: 600;
+}
+
+.main-content table td {
+  padding: 0.75rem;
+  border-bottom: 1px solid var(--academic-border);
+  color: var(--academic-text);
+}
+
+.main-content table tr:nth-child(even) {
+  background: var(--academic-section);
+}
+
+// Code blocks and technical content
+.main-content code {
+  background: var(--academic-light-gray);
+  padding: 0.2rem 0.4rem;
+  border-radius: 3px;
+  font-size: 0.85rem;
+  color: var(--academic-accent);
+  font-family: 'SF Mono', Monaco, 'Cascadia Code', 'Roboto Mono', Consolas, monospace;
+}
+
+.main-content pre {
+  background: var(--academic-accent);
+  color: white;
+  padding: 1.5rem;
+  border-radius: 8px;
+  overflow-x: auto;
+  margin: 1.5rem 0;
+}
+
+// Contact information styling
+.main-content p:contains("massimiliano.ruocco"),
+.main-content p:contains("Project Coordinator") {
+  background: var(--academic-section);
+  padding: 1.25rem;
+  border-radius: 8px;
+  border-left: 3px solid var(--academic-blue);
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+}
+
+// Enhanced model architecture lists with subtle animations
+.main-content h3 + ul li:contains(":") {
+  border: 1px solid var(--academic-border);
+  padding: 1rem;
+  margin: 0.5rem 0;
+  border-radius: 6px;
+  background: linear-gradient(135deg, #ffffff, var(--academic-section));
+  transition: all 0.2s ease;
+}
+
+.main-content h3 + ul li:contains(":"):hover {
+  border-color: var(--academic-blue);
+  box-shadow: 0 2px 4px rgba(15, 23, 42, 0.08);
+}
+
+.main-content h3 + ul li:contains(":") strong {
+  color: var(--academic-navy);
+  font-size: 1rem;
+  display: block;
+  margin-bottom: 0.25rem;
+  transition: color 0.2s ease;
+}
+
+// Responsive design improvements
 @media (max-width: 768px) {
   .main-content h1:first-of-type {
     font-size: 2rem;
@@ -255,10 +585,11 @@
   
   .main-content p:first-of-type {
     font-size: 1.1rem;
+    max-width: 100%;
   }
   
   .main-content h2 {
-    font-size: 1.75rem;
+    font-size: 1.5rem;
   }
   
   .main-content div[align="center"] {
@@ -270,6 +601,16 @@
     display: block !important;
     width: 100% !important;
     margin: 1rem 0 !important;
+    height: auto !important;
+  }
+  
+  .main-content table {
+    font-size: 0.8rem;
+  }
+  
+  .main-content table th,
+  .main-content table td {
+    padding: 0.5rem;
   }
 }
 
@@ -280,5 +621,10 @@
   
   .main-content div[align="center"] {
     padding: 0.75rem;
+  }
+  
+  .main-content ul li:contains("Abstract:") {
+    padding: 1rem;
+    text-align: left;
   }
 }
