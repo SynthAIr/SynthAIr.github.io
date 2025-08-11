@@ -36,7 +36,7 @@ We evaluate generators using the **Train on Synthetic, Test on Real (TSTR)** met
 - Row-wise, token-by-token generation preserving feature relationships
 - Target masking regularization prevents data memorization
 - Overfitting detection using Q_δ statistic and Distance to Closest Record (DCR)
-- **Performance**: Achieves 94-97% of real-data predictive performance
+- Performance: Achieves 94-97% of real-data predictive performance
 
 <div align="center">
   <img src="../figures/rtf.svg" />
@@ -53,7 +53,7 @@ We evaluate generators using the **Train on Synthetic, Test on Real (TSTR)** met
 - VAE encoder transforms mixed-type data into continuous representations
 - Score-based diffusion with linear noise schedule (20-50 sampling steps)
 - Adaptive β-VAE training with dynamic KL-divergence scheduling
-- **Performance**: Strong fidelity with efficient sampling
+- Performance: Strong fidelity with efficient sampling
 
 <div align="center">
   <img src="../figures/tabsyn.svg" />
@@ -70,7 +70,7 @@ We evaluate generators using the **Train on Synthetic, Test on Real (TSTR)** met
 - Conditional generation with training-by-sampling for rare categories
 - WGAN-GP loss with gradient penalty for stable adversarial training
 - PacGAN framework processing 10 samples jointly to prevent mode collapse
-- **Performance**: Effective for targeted scenario generation
+- Performance: Effective for targeted scenario generation
 
 <div align="center">
   <img src="../figures/ctgan.svg" />
@@ -87,7 +87,7 @@ We evaluate generators using the **Train on Synthetic, Test on Real (TSTR)** met
 - Reparameterization trick for differentiable latent sampling  
 - Batch normalization and L2 regularization
 - Minimal GPU requirements with fast training
-- **Performance**: Good utility-to-compute ratio
+- Performance: Good utility-to-compute ratio
 
 ### Gaussian Copula (Statistical)
 
@@ -98,11 +98,11 @@ We evaluate generators using the **Train on Synthetic, Test on Real (TSTR)** met
 - Multivariate Gaussian copula for dependency structure
 - No neural network training required
 - Strongest privacy protection among all models
-- **Performance**: Best for privacy-critical applications
+- Performance: Best for privacy-critical applications
 
 ## Evaluation Framework
 
-Our comprehensive evaluation spans five dimensions ensuring synthetic data maintains essential properties for aviation operations:
+Our evaluation spans three dimensions ensuring synthetic data maintains essential properties for aviation operations:
 
 ### Fidelity Assessment
 - **Statistical Similarity**: Kolmogorov-Smirnov tests for continuous distributions, Chi-squared for categorical
