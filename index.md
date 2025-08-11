@@ -101,8 +101,13 @@ SynthAIr enables ATM stakeholders to:
 
 **Bringing together expertise** in artificial intelligence (SINTEF), aviation systems (TU Delft), operational air traffic management (EUROCONTROL), and data analytics (Deep Blue).
 
+## Contact
+
+**Project Coordinator:** Massimiliano Ruocco (SINTEF)  
+📧 [massimiliano.ruocco@sintef.no](mailto:massimiliano.ruocco@sintef.no)
+
 ---
 
 <div align="center">
-<em>Funded by the SESAR 3 Joint Undertaking under the European Union's Horizon 2020 research and innovation programme (Grant No 101114847)</em>
+<em>Funded by the SESAR 3 Joint Undertaking under the European Union's Horizon 2020 research and innovation programme</em>
 </div>

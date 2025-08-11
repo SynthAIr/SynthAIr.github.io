@@ -8,6 +8,8 @@ nav_order: 6
 
 The SynthAIr project provides a comprehensive suite of open-source tools for synthetic data generation and embedding-based analytics in Air Traffic Management. Our repositories are organized by functionality and data type, offering researchers and practitioners flexible solutions for various ATM applications.
 
+**🔗 Main GitHub Organization:** [https://github.com/SynthAIr](https://github.com/SynthAIr)
+
 
 ## Tabular Data Generators
 
