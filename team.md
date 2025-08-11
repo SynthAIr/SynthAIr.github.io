@@ -10,7 +10,7 @@ The SynthAIr project team includes researchers from institutions across Europe w
 
 ## SINTEF (Norway)
 
-**Massimiliano Ruocco** - *Senior Researcher (SINTEF)/Associate Professor (NTNU)*
+**Massimiliano Ruocco** - *Project Coordinator, Senior Researcher /Associate Professor (NTNU)*
 
 **Martina Ragosta** - *Senior Researcher*  
 
