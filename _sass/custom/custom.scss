@@ -62,11 +62,11 @@
   font-size: 0.95rem;
   color: var(--academic-slate) !important;
   text-decoration: none;
-  padding: 0.75rem 1rem;
+  padding: 0.5rem 1rem;
   border-radius: 6px;
   transition: all 0.2s ease;
   display: block;
-  margin: 0.2rem 0;
+  margin: 0.05rem 0;
   border-left: 3px solid transparent;
 }
 
@@ -90,9 +90,9 @@
   color: var(--academic-blue) !important;
   font-size: 0.875rem;
   font-weight: 500;
-  padding: 0.5rem 1rem 0.5rem 2rem;
+  padding: 0.25rem 1rem 0.25rem 2rem;
   border-left: 2px solid transparent;
-  margin: 0.1rem 0;
+  margin: 0;
   position: relative;
 }
 
@@ -125,7 +125,18 @@
 
 // Navigation sections spacing
 .nav-list-item {
-  margin-bottom: 0.5rem;
+  margin-bottom: 0.1rem;
+}
+
+// Reduce spacing between parent sections and their child items
+.nav-list .nav-list-item:has(.nav-list) {
+  margin-bottom: 0.05rem;
+}
+
+// Reduce margin for nested navigation lists
+.nav-list .nav-list {
+  margin-top: 0;
+  margin-bottom: 0;
 }
 
 // Page title styling
