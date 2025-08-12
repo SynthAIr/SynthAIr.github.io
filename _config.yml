@@ -11,8 +11,6 @@ favicon_ico: "/figures/synthair_icon.ico"
 # Social links
 github_username: SynthAIr
 
-# EU Funding Acknowledgement
-funding_acknowledgement: "This project has received funding from the SESAR 3 Joint Undertaking under grant agreement No 101114847, part of the European Union’s Horizon 2020 research and innovation programme."
 
 # Navigation structure
 nav:
@@ -29,4 +27,4 @@ nav:
   - title: "Publications"
     url: /publications/
 
-footer_content: "© 2025 - SynthAIr."
+footer_content: "© 2025 - SynthAIr"
