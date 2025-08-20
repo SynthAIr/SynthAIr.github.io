@@ -24,7 +24,7 @@ nav:
     url: /results/
   - title: "Repositories"
     url: /repositories/
-  - title: "Publications"
-    url: /publications/
+  - title: "Research Outputs"
+    url: /research-outputs/
 
 footer_content: "© 2025 - SynthAIr"
