@@ -46,21 +46,49 @@ Official project deliverables made publicly available through the European Commi
 - **CORDIS Link:** [Download](https://ec.europa.eu/research/participants/documents/downloadPublic?documentIds=080166e513184d8c&appId=PPGMS)
 - **Abstract:** This deliverable presents the synthetic Air Traffic Management (ATM) datasets generated as part of the SynthAIr project. It focuses on datasets created using the initial machine learning models outlined in deliverable D3.1. These datasets offer a high-fidelity representation of aircraft trajectory characteristics, realistic variability, and class-conditional generation. The document provides detailed information on the datasets' characteristics, including key variables, distributions, and spatial-temporal coverage. It also includes a user guide for accessing and utilizing the open-source data, along with a summary of known limitations. By providing diverse, high-fidelity synthetic data that is easily accessible, this deliverable supports ongoing ATM research and development, in alignment with SynthAIr's objectives to advance ATM automation and simulation capabilities.
 
-### **D4.1- Initial General Time Series Embeddings ML Model**
+### **D3.3 - Final Synthetic Data Generation Report**
+
+- **Authors:** SINTEF, TUD
+- **Date:** 19 May 2025
+- **Abstract:** This deliverable presents the comprehensive evaluation of the nine synthetic data generation models developed under the SynthAIr project. It details the experimental protocols, quantitative and qualitative metrics, comparative analyses, and downstream task performance across six representative Air Traffic Management (ATM) use cases. Its goal is to demonstrate the fidelity, utility, diversity, and privacy properties of the generated datasets, providing researchers and operational teams with actionable insights into when — and how — these synthetic generators can replace or augment real-world ATM data. Results show that advanced neural network architectures, in particular transformer-based generators, retain 94–97% of real-data predictive performance while maintaining feature importance patterns informative for operational decision-making.
+
+### **D3.4 - Final Synthetic Data Generation ML Models**
+
+- **Authors:** SINTEF, TUD
+- **Date:** 19 May 2025
+- **Abstract:** This deliverable presents the final synthetic data generation machine learning models developed in the SynthAIr project. It documents eight AI models designed for generating synthetic data in Air Traffic Management: five tabular data generators (CTGAN, TabSyn, REaLTabFormer, TVAE, and Gaussian Copula) and three time-series generators (TCVAE with VampPrior, TimeVQVAE, and TimeGAN). For each model, theoretical foundations, architectural components, training methodologies, and implementation details are provided through well-structured open-source repositories. This work represents a significant contribution in synthetic data generation for aviation, enabling privacy-preserving data sharing and enhanced predictive modelling in the ATM domain.
+
+### **D4.1 - Initial General Time Series Embeddings ML Model**
 
 - **Authors:** SINTEF, TUD, DEEPBLUE, EUROCONTROL
 - **Date:** 22 November 2024
 - **CORDIS Link:** [Download](https://ec.europa.eu/research/participants/documents/downloadPublic?documentIds=080166e5151fe59c&appId=PPGMS)
-- **Abstract:** This deliverable presents the initial development of general time series embeddings for ATM data. It demonstrates how the rich latent representations learned by variational autoencoder models can serve as general-purpose time series embeddings without requiring additional model development. The document outlines an evaluation framework for assessing embedding quality and presents initial
-results focusing on trajectory clustering and visualization. While these results are promising, we also identify areas for future enhancement. This work lays the groundwork for developing more refined embedding models in subsequent deliverables, ultimately contributing to enhanced ATM automation and simulation capabilities through improved data representations.
+- **Abstract:** This deliverable presents the initial development of general time series embeddings for ATM data. It demonstrates how the rich latent representations learned by variational autoencoder models can serve as general-purpose time series embeddings without requiring additional model development. The document outlines an evaluation framework for assessing embedding quality and presents initial results focusing on trajectory clustering and visualization. While these results are promising, it also identifies areas for future enhancement. This work lays the groundwork for developing more refined embedding models in subsequent deliverables, ultimately contributing to enhanced ATM automation and simulation capabilities through improved data representations.
 
+### **D4.2 - General Time Series Embeddings ML Model (Implementation)**
 
-### **D5.1: Exploratory Research Plan (ERP) – Initial**
+- **Authors:** SINTEF
+- **Date:** 31 May 2025
+- **Abstract:** This deliverable provides the technical documentation for two code repositories from the SynthAIr project that implement machine learning embedding models. The first repository focuses on tabular embeddings for analysing flight operational data to enable pattern discovery and anomaly detection. The second repository implements time series models for trajectory generation and transfer learning, featuring multiple generative architectures including diffusion models, flow matching, and VAEs specifically designed for aircraft trajectory modelling. Both repositories are structured with clear documentation, installation procedures, and practical examples, following open-source best practices to ensure researchers and practitioners can readily adopt and extend these tools.
+
+### **D4.3 - General Embeddings ML Model**
+
+- **Authors:** SINTEF
+- **Date:** 20 May 2025
+- **Abstract:** This deliverable presents a framework for general-purpose embeddings in Air Traffic Management (ATM), demonstrating how latent representations from synthetic data generation can be leveraged for downstream tasks. Building upon previous deliverables (D3.1, D4.1, D3.3), it presents tabular embeddings from variational and transformer-based architectures, and time series embeddings from temporal convolutional networks and flow matching models. These embeddings transform flight records and trajectories into compact vectors capturing operational patterns and temporal dynamics. The deliverable demonstrates their application in operational pattern discovery, anomaly detection, trajectory clustering, core-set extraction, and transfer learning between airports with limited data. Results suggest these approaches provide analytical value beyond synthetic data generation, offering ATM stakeholders tools for data exploration and operational optimisation with reduced computational requirements.
+
+### **D5.1 - Exploratory Research Plan (ERP) – Initial**
 
 - **Authors:** DEEPBLUE, TUD, SINTEF, EUROCONTROL
 - **Date:** 30 October 2024
 - **CORDIS Link:** [Download](https://ec.europa.eu/research/participants/documents/downloadPublic?documentIds=080166e514083263&appId=PPGMS)
-- **Abstract:** This document is the initial version of the SynthAIr Exploratory Research Plan (ERP). It describes the Exploratory research plan which will guide the preparation and execution of the validation exercises of the SynthAIr solution for TRL1 (Basic Technology Research / Research to Prove Feasibility).
+- **Abstract:** This document is the initial version of the SynthAIr Exploratory Research Plan (ERP). It describes the exploratory research plan which will guide the preparation and execution of the validation exercises of the SynthAIr solution for TRL1 (Basic Technology Research / Research to Prove Feasibility).
+
+### **D5.2 - Exploratory Research Report (ERR)**
+
+- **Authors:** DEEPBLUE, SINTEF, TUD, EUROCONTROL
+- **Date:** 9 September 2025
+- **Abstract:** This document presents the consolidated results of the SynthAIr project aiming to reach a maturity level of TRL 1. SynthAIr explored the potential of synthetic dataset generation in ATM and aviation by developing AI/ML models for different operational applications. The project aim was two-fold: (1) to assess the feasibility and value of synthetic datasets as standalone solutions for specific use cases; and (2) to evaluate augmented datasets — combining real and synthetic data — to enhance the capabilities of predictive AI/ML models in aviation. The report details three validation exercises covering the project's validation objectives, presents confidence assessments of the results, and concludes with recommendations for future research directions toward higher TRL levels.
 
 ### **D6.1 - Communication, Dissemination and Exploitation Plan**
 
@@ -69,3 +97,9 @@ results focusing on trajectory clustering and visualization. While these results
 - **DOI:** [10.5281/zenodo.13935230](https://doi.org/10.5281/zenodo.13935230)
 <!-- - **License:** [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/) -->
 - **Abstract:** This document is the Communication, Dissemination and Exploitation Initial Plan for SynthAIr. It contains detailed information about the Communication and Dissemination strategy, and the preliminary Exploitation strategy. Targets, key messages, information about branding, channels, social media, publications, events and overall KPIs both for communication and dissemination actions are detailed in this document.
+
+### **D6.4 - Final Communication, Dissemination and Exploitation Plan**
+
+- **Authors:** DEEPBLUE, SINTEF, TUD, EUROCONTROL
+- **Date:** 29 January 2026
+- **Abstract:** This document is the final Communication, Dissemination and Exploitation Plan for SynthAIr. It contains detailed information about the Communication, Dissemination and Exploitation strategy and its results at project end. It reports on the outcomes of all communication channels (website, social media, press and media, graphic materials, videos), dissemination activities (open-access publications, conference presentations, stakeholder events), and the exploitation strategy for the project's exploitable results, including the open-source repositories and synthetic datasets produced during the project lifetime.

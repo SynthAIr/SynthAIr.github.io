@@ -9,15 +9,26 @@ nav_order: 1
 
 Scientific publications from the SynthAIr project, including peer-reviewed conference papers and preprints.
 
-## Preprints
+## Journal Papers
 
 ### **Pre-Tactical Flight-Delay and Turnaround Forecasting with Synthetic Aviation Data**
 
 - **Authors:** Abdulmajid Murad (SINTEF), Massimiliano Ruocco (SINTEF, NTNU)
+- **Journal:** CEAS Aeronautical Journal
+- **DOI:** [10.1007/s13272-026-00941-7](https://doi.org/10.1007/s13272-026-00941-7)
 - **Preprint:** [arXiv:2508.02294](https://arxiv.org/abs/2508.02294)
-- **Date:** August 4, 2025
-- **Abstract:** Access to comprehensive flight operations data remains severely restricted in aviation due to commercial sensitivity and competitive considerations, hindering the development of predictive models for operational planning. This paper investigates whether synthetic data can effectively replace real operational data for training machine learning models in pre-tactical aviation scenarios-predictions made hours to days before operations using only scheduled flight information. We evaluate four state-of-the-art synthetic data generators on three prediction tasks: aircraft turnaround time, departure delays, and arrival delays. Using a Train on Synthetic, Test on Real (TSTR) methodology on over 1.7 million European flight records, we first validate synthetic data quality through fidelity assessments, then assess both predictive performance and the preservation of operational relationships. Our results show that advanced neural network architectures, specifically transformer-based generators, can retain 94-97% of real-data predictive performance while maintaining feature importance patterns informative for operational decision-making. Our analysis reveals that even with real data, prediction accuracy is inherently limited when only scheduled information is available-establishing realistic baselines for pre-tactical forecasting. These findings suggest that high-quality synthetic data can enable broader access to aviation analytics capabilities while preserving commercial confidentiality, though stakeholders must maintain realistic expectations about pre-tactical prediction accuracy given the stochastic nature of flight operations. 
+- **Date:** 2026
+- **Abstract:** Access to comprehensive flight operations data remains severely restricted in aviation due to commercial sensitivity and competitive considerations, hindering the development of predictive models for operational planning. This paper investigates whether synthetic data can effectively replace real operational data for training machine learning models in pre-tactical aviation scenarios — predictions made hours to days before operations using only scheduled flight information. We evaluate four state-of-the-art synthetic data generators on three prediction tasks: aircraft turnaround time, departure delays, and arrival delays. Using a Train on Synthetic, Test on Real (TSTR) methodology on over 1.7 million European flight records, we first validate synthetic data quality through fidelity assessments, then assess both predictive performance and the preservation of operational relationships. Our results show that advanced neural network architectures, specifically transformer-based generators, can retain 94–97% of real-data predictive performance while maintaining feature importance patterns informative for operational decision-making. Our analysis reveals that even with real data, prediction accuracy is inherently limited (R² ≤ 0.44) when only scheduled information is available — establishing realistic baselines for pre-tactical forecasting.
 - **Keywords:** Synthetic Data, Air Traffic Management (ATM), Flight Delay Prediction, Turnaround Time, Machine Learning, Data Utility, Generative Models, Aviation Operations
+
+## Preprints
+
+### **Generative Embeddings for ATM: Unifying Synthetic Data Creation and Operational Insight**
+
+- **Authors:** Abdulmajid Murad (SINTEF), Massimiliano Ruocco (SINTEF, NTNU), Martina Ragosta (SINTEF)
+- **Status:** Submitted to arXiv (preprint link to be published)
+- **Abstract:** Air Traffic Management (ATM) systems generate vast amounts of complex and heterogeneous operational data that are difficult to analyze without heavy manual preprocessing. While generative models are increasingly used to create synthetic aviation data, their internal representations (embeddings) remain underexploited for operational use. In this work, we show that embeddings learned by generative models trained on flight records and trajectories can serve a dual purpose: creating realistic synthetic data and enabling new forms of operational analytics. Using transformer-based variational autoencoders for flight records and temporal convolutional variational autoencoders for trajectory data on European flights, we demonstrate how embedding-based methods can reveal meaningful operational clusters, detect unusual flights, build airport networks based on operational similarity rather than geography, and extract representative trajectories that reduce data size while preserving diversity.
+- **Keywords:** Air traffic management, embeddings, variational autoencoders, operational analytics, trajectory clustering, outlier detection, synthetic data, generative models
 
 ## Conference Papers
 
@@ -46,12 +57,31 @@ Scientific publications from the SynthAIr project, including peer-reviewed confe
 - **Keywords:** Generative Artificial Intelligence, Variational Autoencoders, Gaussian Copula, Synthetic Flight Information, Synthetic Data Quality Assessment, Flight Delay Prediction, Air Traffic Management, Air Transportation Deep Learning, Statistical Modeling
 
 
+### **Learning to Land Anywhere: Transferable Generative Models for Aircraft Trajectories**
+
+- **Authors:** Olav Finne Præsteng Larsen (NTNU), Massimiliano Ruocco (SINTEF, NTNU), Michail Spitieris (SINTEF), Abdulmajid Murad (SINTEF), Martina Ragosta (SINTEF)
+- **Conference:** [SESAR Innovation Days 2025](https://www.sesarju.eu/node/4954)
+- **Date:** November 2025
+- **DOI:** [10.5281/zenodo.18186881](https://doi.org/10.5281/zenodo.18186881)
+- **Abstract:** Access to trajectory data is a key requirement for developing and validating ATM solutions, yet many secondary and regional airports face severe data scarcity. This paper investigates whether generative models trained on data-rich airports can be efficiently adapted to data-scarce airports using transfer learning. State-of-the-art diffusion- and flow-matching–based architectures are adapted to the aviation domain and evaluated on their transferability between Zürich (source) and Dublin (target) landing trajectory datasets. Models pretrained on Zürich and fine-tuned on Dublin with as little as 5% of local data achieve competitive performance, consistently outperforming models trained from scratch. The work received the "AI & Application" Thesis Award at the Norwegian Open AI Lab Master Thesis Awards 2025.
+- **Keywords:** Aircraft trajectory generation, transfer learning, diffusion models, flow matching, air traffic management, synthetic data
+
 ### **Generation of Synthetic Aircraft Landing Trajectories Using Generative Adversarial Networks**
 
 - **Authors:** Sebastiaan Wijnands (TUD), Alexei Sharpanskykh (TUD), Karim Aly (TUD)
-- **Conference:** [SESAR Innovation Days](https://www.sesarju.eu/SIDS2024)
+- **Conference:** [SESAR Innovation Days 2024](https://www.sesarju.eu/node/4611)
 - **Location:** Rome, Italy
-- **Date:** November 11-15, 2024
-- **URL:** [2024-054](https://www.sesarju.eu/sites/default/files/documents/sid/2024/papers/SIDs_2024_paper_054%20final.pdf)
+- **Date:** November 11–15, 2024
+- **DOI:** [10.5281/zenodo.14774663](https://doi.org/10.5281/zenodo.14774663)
 - **Abstract:** The increasing demand and complexity of air traffic management (ATM) systems necessitate significant advancements in automation to ensure safety and efficiency. Artificial intelligence (AI) and machine learning (ML) are emerging as promising solutions to manage this growing complexity, offering enhanced decision-making and predictive capabilities. However, the effectiveness of ML models in ATM heavily relies on the availability of extensive, high-quality data. In many cases, such data is scarce or incomplete, which presents a major barrier for training robust models. Synthetic data generation (SDG) is a viable solution to address this, enabling the creation of realistic datasets that unlock the ML value proposition. The Terminal Maneuvering Area (TMA) is a crucial segment of airspace characterized by high traffic density and diverse trajectory types, necessitating granular data to model these scenarios accurately. The main research objective of this work was to investigate the applicability of TimeGAN in generating synthetic 4-dimensional aircraft landing trajectories capable of capturing traffic patterns in this airspace, helping to analyze airspace constraints and delay propagation. The resulting synthetic trajectories were evaluated in terms of data diversity, fidelity and usefulness. The main challenge identified during the research was the imbalance in data classes, which affected the models' ability to accurately capture data patterns, particularly in less frequent scenarios. Generating synthetic data based on separate groupings showed promise in addressing these imbalances, although this approach was sensitive to the designation of groups. This work proves the capability of TimeGAN in generating diverse, realistic trajectories that are difficult to differentiate from real historical data.
 - **Keywords:** Air traffic management, Deep generative models, Generative Adversarial Networks, Multivariate time series generation, Synthetic data quality evaluation
+
+## Under Review
+
+### **Generative Augmentation of Imbalanced Flight Records for Flight Diversion Prediction: A Multi-objective Optimisation Framework**
+
+- **Authors:** Karim Aly (TUD), Alexei Sharpanskykh (TUD), Jacco Hoekstra (TUD)
+- **Submitted to:** Aerospace Science and Technology
+- **Status:** Under review
+- **Abstract:** This paper presents a framework for augmenting imbalanced historical flight datasets using generative models to improve prediction of rare operational events such as flight diversions. By generating synthetic examples of minority-class events and combining them with real data, the approach addresses the class imbalance challenge that limits the performance of standard machine learning classifiers. A multi-objective optimisation framework is used to balance fidelity and diversity of generated samples for downstream classification tasks.
+- **Keywords:** Synthetic data augmentation, flight diversion prediction, class imbalance, generative models, air traffic management

@@ -6,7 +6,7 @@ nav_order: 1
 
 # Transforming ATM Through AI-Powered Synthetic Data Generation
 
-**SynthAIr** advances Air Traffic Management (ATM) automation through AI methods for synthetic data generation. This EU-funded research initiative (SESAR 3 Joint Undertaking) addresses critical challenges of data scarcity, privacy constraints, and operational complexity by delivering **9 generative models** validated across **6 operational use cases** spanning the complete flight lifecycle.
+**SynthAIr** advances Air Traffic Management (ATM) automation through AI methods for synthetic data generation. This EU-funded research initiative (SESAR 3 Joint Undertaking) addresses critical challenges of data scarcity, privacy constraints, and operational complexity by delivering **10 generative models** validated across **6 operational use cases** spanning the complete flight lifecycle.
 
 <div align="center">
   <img src="figures/concept_image.png" />
@@ -58,13 +58,14 @@ Specialized for flight operational records and mixed-type data:
 - **TVAE**: Variational autoencoders providing stable training with minimal computational requirements
 - **Gaussian Copula**: Statistical approach offering strongest privacy protection
 
-### [Time Series Models](models/timeseries) (4 Architectures)
+### [Time Series Models](models/timeseries) (5 Architectures)
 Specialized architectures for aircraft trajectory generation:
 
 - **TimeVQVAE**: Time-frequency domain processing with transformer priors for global coherence
 - **TCVAE with VampPrior**: Temporal convolutional networks with flexible prior distributions  
 - **TimeGAN**: Adversarial training preserving temporal relationships and sequential patterns
-- **Flow Matching & Diffusion Models**: Continuous normalizing flows and denoising diffusion for spatiotemporal generation
+- **Flow Matching**: Continuous normalizing flows for efficient latent-space trajectory generation
+- **Diffusion Models**: Denoising diffusion probabilistic models adapted to aviation spatiotemporal data
 
 
 ## Applications
@@ -109,5 +110,5 @@ SynthAIr enables ATM stakeholders to:
 ---
 
 <div align="center">
-<em>Funded by the SESAR 3 Joint Undertaking under the European Union's Horizon 2020 research and innovation programme</em>
+<em>Funded by the SESAR 3 Joint Undertaking under the European Union's Horizon Europe research and innovation programme</em>
 </div>

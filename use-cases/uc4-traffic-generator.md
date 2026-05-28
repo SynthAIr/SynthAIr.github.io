@@ -108,6 +108,34 @@ The synthetic trajectories reproduce:
 - **Spatial variation patterns** consistent with air traffic control routing practices
 - **Class-conditional generation** for targeted trajectory synthesis for specific operational scenarios
 
+### Quantitative Evaluation Results
+
+The table below reports quality and statistical metrics comparing TimeVQVAE and TCVAE on the EHAM–LIMC (Amsterdam–Milan) route dataset. Results are from the peer-reviewed ICNS 2025 publication ([Synthetic Aircraft Trajectory Generation Using Time-Based VQ-VAE](https://doi.org/10.1109/ICNS65417.2025.10976929)).
+
+| Metric | Description | TCVAE | TimeVQVAE |
+|--------|-------------|-------|-----------|
+| **FID** (↓) | Fréchet Inception Distance — distribution similarity | 0.7944 | **0.0029** |
+| **IS** (↑) | Inception Score — realism and diversity | 2.1514 ± 0.1283 | **3.4049 ± 0.2660** |
+| **MDD** (↓) | Marginal Distribution Difference | 0.1789 | **0.0512** |
+| **ACD** (↓) | Autocorrelation Difference | 289.3323 | **5.6334** |
+| **SD** (↓) | Skewness Difference | 0.2253 | **0.0554** |
+| **KD** (↓) | Kurtosis Difference | 0.3164 | **0.1065** |
+
+TimeVQVAE outperforms TCVAE across all six metrics. The improvement in FID (0.7944 → 0.0029) and ACD (289.3323 → 5.6334) is particularly substantial, indicating that the time-frequency processing and vector quantization in TimeVQVAE produce trajectories with significantly better distributional fidelity and temporal correlation structure.
+
+### Flyability Assessment
+
+Generated trajectories were validated using the **BlueSky open-source air traffic simulator**, which provides operational realism testing beyond purely statistical metrics. Trajectory similarity was assessed using multiple distance measures — SSPD, Hausdorff, Fréchet, LCSS, EDR, DTW, and ERP — applied to synthetic trajectories against the real distribution.
+
+Key findings from the flyability assessment of TimeVQVAE-generated trajectories on the EHAM–LIMC route:
+
+- **SSPD**: Approximately 80% of generated trajectories achieve distances below 0.01, indicating very high spatial similarity to real routes
+- **Hausdorff and Fréchet distances**: Approximately 60% of trajectories achieve distances below 0.1, confirming strong shape fidelity for the majority of generated samples
+- **LCSS and EDR**: Approximately 20% of trajectories score below 0.1; these metrics are sensitive to sequence alignment and temporal ordering, reflecting remaining challenges in reproducing the exact temporal progression of flight phases
+- **DTW and ERP**: The majority of trajectories score above 1.0, reflecting the sensitivity of warping-based metrics to the high dimensionality and variable length of trajectory sequences
+
+Overall, the flyability results confirm that TimeVQVAE-generated trajectories are operationally plausible and spatially consistent with real air traffic patterns, while also revealing that temporal alignment in fine-grained flight phases remains an open challenge for future work.
+
 
 ## Trajectory Clustering and Pattern Discovery
 

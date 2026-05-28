@@ -8,7 +8,7 @@ nav_order: 1
 
 # Tabular Data Generation
 
-The SynthAIr project developed specialized synthetic data generators to address critical challenges in Air Traffic Management: data scarcity, privacy constraints, and commercial sensitivity. Our tabular data pipeline processes mixed-type operational data including flight schedules, delays, and turnaround times using five complementary approaches, each optimized for different data characteristics and use cases. To learn more, see our research publications: [Pre-Tactical Flight-Delay and Turnaround Forecasting with Synthetic Aviation Data](https://arxiv.org/abs/2508.02294) and [Synthetic Flight Data Generation Using Generative Models](https://doi.org/10.1109/ICNS65417.2025.10976960).Open-source implementations are available in our [tabular generators repositories](/repositories/repositories.html#tabular-data-generators).  Public deliverables describing the tabular data generators are currently under evaluation by the SESAR Joint Undertaking and will be made publicly available upon approval.
+The SynthAIr project developed specialized synthetic data generators to address critical challenges in Air Traffic Management: data scarcity, privacy constraints, and commercial sensitivity. Our tabular data pipeline processes mixed-type operational data including flight schedules, delays, and turnaround times using five complementary approaches, each optimized for different data characteristics and use cases. To learn more, see our research publications: [Pre-Tactical Flight-Delay and Turnaround Forecasting with Synthetic Aviation Data](https://doi.org/10.1007/s13272-026-00941-7) and [Synthetic Flight Data Generation Using Generative Models](https://doi.org/10.1109/ICNS65417.2025.10976960). Open-source implementations are available in our [tabular generators repositories](/repositories/repositories.html#tabular-data-generators). Public deliverables are available on [Zenodo](https://zenodo.org/communities/synthair/records).
 ## Overview
 
 Tabular synthetic data generation in aviation requires handling complex mixed-type datasets with categorical features (airlines, airports, aircraft types), continuous variables (delays, durations), and temporal information (schedules, timestamps). Our approach addresses three fundamental challenges:
@@ -80,14 +80,37 @@ We evaluate generators using the **Train on Synthetic, Test on Real (TSTR)** met
 
 ### TVAE (Variational Autoencoder)
 
-**Tabular Variational Autoencoder (TVAE)** provides a probabilistic approach to synthetic data generation with lightweight computational requirements and stable training characteristics.
+**Tabular Variational Autoencoder (TVAE)** provides a probabilistic approach to synthetic data generation with lightweight computational requirements and stable training characteristics. Sharing its preprocessing pipeline with CTGAN, TVAE replaces adversarial training with a VAE objective, offering more stable convergence and the ability to generate large synthetic datasets efficiently.
 
 **Key Features:**
-- Evidence Lower Bound (ELBO) optimization
-- Reparameterization trick for differentiable latent sampling  
-- Batch normalization and L2 regularization
-- Minimal GPU requirements with fast training
-- Performance: Good utility-to-compute ratio
+- Evidence Lower Bound (ELBO) optimization combining reconstruction accuracy with KL regularisation
+- Reparameterization trick enabling differentiable latent sampling and end-to-end backpropagation
+- Batch normalisation and L2 regularisation throughout encoder and decoder layers
+- Shared mode-based preprocessing with CTGAN: Bayesian GMM normalization for continuous features, one-hot encoding for categorical
+- Minimal GPU requirements with fast training — best compute efficiency among all five tabular generators
+- Performance: Good utility-to-compute ratio; scales well to large datasets (>1 million records)
+
+<div align="center">
+  <img src="../figures/tvae.svg" />
+  <br>
+  <em><strong>Figure 5: TVAE Architecture.</strong> The encoder maps preprocessed flight records through stacked MLP layers to a variational bottleneck producing μ and log σ² parameters. The reparameterization trick samples latent code z = μ + σ·ε, which the decoder reconstructs back to flight record space. Training minimises the ELBO: reconstruction loss plus KL divergence from the standard normal prior.</em>
+</div>
+
+#### Architecture Details
+
+**Preprocessing**: Continuous features (delays, durations) are normalized using a Bayesian Gaussian Mixture Model to handle multi-modal distributions; categorical features (airline, airport, aircraft type) are one-hot encoded. This is the same preprocessing pipeline used by CTGAN.
+
+**Encoder**: A stack of fully connected linear layers with batch normalisation and ReLU activations maps the preprocessed input to a compact intermediate representation. The final encoder layer splits into two heads — one for the mean vector μ and one for log σ² — defining a Gaussian posterior over the latent space.
+
+**Latent Sampling**: The reparameterization trick samples z = μ + σ·ε where ε ~ N(0, I), making the sampling step differentiable and enabling gradient-based optimization through the stochastic node.
+
+**Decoder**: A symmetric MLP stack maps latent code z back to the original feature space, applying activation functions appropriate to each output type (continuous or categorical). During generation, z is sampled directly from the prior N(0, I) and passed through the decoder.
+
+**Training Objective**: TVAE minimises the ELBO:
+
+`L = E[log p(x|z)] − β · KL(q(z|x) || p(z))`
+
+where the reconstruction term encourages fidelity to input distributions and the KL term regularises the latent space towards the standard normal prior. L2 weight decay provides additional regularisation against overfitting on small datasets.
 
 ### Gaussian Copula (Statistical)
 

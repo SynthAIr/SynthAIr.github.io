@@ -7,7 +7,7 @@ nav_order: 2
 
 # Time Series Generation
 
-For trajectory data, we adopted specialized models that capture the complex spatiotemporal dynamics of aircraft movements. These models handle both terminal area operations and complete end-to-end flights, leveraging advanced machine learning techniques to generate synthetic aircraft trajectories. To learn more about our research, see our publications: [Synthetic Aircraft Trajectory Generation Using Time-Based VQ-VAE](https://doi.org/10.1109/ICNS65417.2025.10976929) and [Generation of Synthetic Aircraft Landing Trajectories Using Generative Adversarial Networks](https://www.sesarju.eu/sites/default/files/documents/sid/2024/papers/SIDs_2024_paper_054%20final.pdf). Open-source implementations are available in our [trajectory generation repositories](/repositories/repositories.html#time-series-generators). Public deliverables describing the time series generators are currently under evaluation by the SESAR Joint Undertaking and will be made publicly available upon approval.
+For trajectory data, we adopted specialized models that capture the complex spatiotemporal dynamics of aircraft movements. These models handle both terminal area operations and complete end-to-end flights, leveraging advanced machine learning techniques to generate synthetic aircraft trajectories. To learn more about our research, see our publications: [Synthetic Aircraft Trajectory Generation Using Time-Based VQ-VAE](https://doi.org/10.1109/ICNS65417.2025.10976929) and [Generation of Synthetic Aircraft Landing Trajectories Using Generative Adversarial Networks](https://doi.org/10.5281/zenodo.14774663). Open-source implementations are available in our [trajectory generation repositories](/repositories/repositories.html#time-series-generators). Public deliverables are available on [Zenodo](https://zenodo.org/communities/synthair/records).
 
 <div align="center">
   <img src="../figures/timeseries_roadmap.svg" />
@@ -153,10 +153,27 @@ Our comprehensive evaluation combines multiple assessment approaches:
 ### Statistical Metrics  
 - **Marginal Distribution Difference (MDD)**: Compares overall statistical characteristics
 - **Autocorrelation Difference (ACD)**: Assesses temporal dependency preservation
-- **Skewness/Kurtosis Differences**: Capture distribution asymmetries and tail behaviors
+- **Skewness/Kurtosis Differences (SD, KD)**: Capture distribution asymmetries and tail behaviors
 
 ### Domain-Specific Assessment
-**Flyability Testing**: Generated trajectories are validated in BlueSky air traffic simulator using multiple distance metrics (SSPD, Hausdorff, Fréchet, DTW, etc.) to assess operational feasibility.
+**Flyability Testing**: Generated trajectories are validated in the BlueSky open-source air traffic simulator using multiple trajectory distance metrics (SSPD, Hausdorff, Fréchet, LCSS, EDR, DTW, ERP) to assess operational feasibility.
 
 ### Visual Analysis
 Comprehensive visualization includes PCA/t-SNE projections, time series plots, correlation analysis, and geographical trajectory comparisons.
+
+## Quantitative Results
+
+The following results compare TimeVQVAE and TCVAE on the EHAM–LIMC (Amsterdam–Milan) route dataset, as reported in the peer-reviewed ICNS 2025 paper ([Synthetic Aircraft Trajectory Generation Using Time-Based VQ-VAE](https://doi.org/10.1109/ICNS65417.2025.10976929)).
+
+| Metric | TCVAE | TimeVQVAE |
+|--------|-------|-----------|
+| FID (↓) | 0.7944 | **0.0029** |
+| IS (↑) | 2.1514 ± 0.1283 | **3.4049 ± 0.2660** |
+| MDD (↓) | 0.1789 | **0.0512** |
+| ACD (↓) | 289.3323 | **5.6334** |
+| SD (↓) | 0.2253 | **0.0554** |
+| KD (↓) | 0.3164 | **0.1065** |
+
+TimeVQVAE achieves superior performance across all six metrics. The dramatic improvement in FID (from 0.7944 to 0.0029) and ACD (from 289.33 to 5.63) reflects the benefit of time-frequency domain processing and vector quantization in capturing both global trajectory shape and temporal correlation structure. The higher IS score (3.40 vs 2.15) confirms that TimeVQVAE generates trajectories with greater both realism and diversity.
+
+In the flyability assessment using BlueSky, approximately 80% of TimeVQVAE-generated trajectories achieve SSPD distances below 0.01, and approximately 60% score below 0.1 on Hausdorff and Fréchet distances — confirming strong spatial consistency with real air traffic patterns. Warping-based metrics (DTW, ERP) remain more challenging, reflecting the difficulty of reproducing exact temporal progression across all flight phases.
